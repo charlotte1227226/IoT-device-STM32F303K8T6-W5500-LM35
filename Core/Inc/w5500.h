@@ -162,4 +162,5 @@ W5500_StatusTypeDef W5500_Write_Byte(SPI_HandleTypeDef *hspi, uint16_t reg_addr,
 W5500_StatusTypeDef W5500_Write_Bytes(SPI_HandleTypeDef *hspi, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
 W5500_StatusTypeDef W5500_Read_Byte(SPI_HandleTypeDef *hspi, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
 W5500_StatusTypeDef W5500_Read_Bytes(SPI_HandleTypeDef *hspi, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
+
 #endif
