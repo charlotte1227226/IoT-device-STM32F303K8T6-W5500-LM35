@@ -24,7 +24,25 @@ typedef enum {
 } W5500_StatusTypeDef;
 
 
-
+/* Operation Mode */
+#define W5500_OM_VDM   0x00
+#define W5500_OM_FDM1  0x01
+#define W5500_OM_FDM2  0x02
+/* -------------- */
+/* Read or Write */
+#define W5500_READ     0x00
+#define W5500_WRITE    0x01
+/* Socket Number Block (BSB)  */
+#define W5500_BSB_COMMON        0x00
+#define W5500_BSB_SOCKET_REG(n)     ((uint8_t)(0x01 + ((n) << 2)))
+#define W5500_BSB_SOCKET_TX(n)      ((uint8_t)(0x02 + ((n) << 2)))
+#define W5500_BSB_SOCKET_RX(n)      ((uint8_t)(0x03 + ((n) << 2)))
+/* -------------------------  */
+/* Control Byte */
+static inline uint8_t W5500_CONTROL_BYTE(uint8_t bsb, uint8_t rw, uint8_t om) {
+    return (uint8_t)((bsb << 3) | (rw << 2) | (om & 03));
+}
+/* ------------ */
 /* W5500 register definition ------------------------------------------------*/
 /* Offset Address for Common Register ---------------------------------------*/
 #define W5500_MR               0x0000 // Mode Register
@@ -76,5 +94,48 @@ typedef enum {
 #define W5500_PHYCFGR          0x002E // PHY Configuration Register
 #define W5500_VERSIONR         0x0039 // Version Register
 /* Offset Address  in Socket n Register Block (0≤n≤7) -----------------------*/
-#define W5500_Sn_MR(n)         (0x0000 + (n) * 0x0400) // socket n Mode Register
+#define W5500_Sn_MR            0x0000 // socket n Mode Register
+#define W5500_Sn_CR            0x0001 // socket n Command Register
+#define W5500_Sn_IR            0x0002 // socket n Interrupt Register
+#define W5500_Sn_SR            0x0003 // socket n Status Register
+#define W5500_Sn_PORT0         0x0004 // socket n Source Port Register
+#define W5500_Sn_PORT1         0x0005
+#define W5500_Sn_DHAR0         0x0006 // socket n Destination Hardware Address Register
+#define W5500_Sn_DHAR1         0x0007
+#define W5500_Sn_DHAR2         0x0008
+#define W5500_Sn_DHAR3         0x0009
+#define W5500_Sn_DHAR4         0x000A
+#define W5500_Sn_DHAR5         0x000B
+#define W5500_Sn_DIPR0         0x000C // socket n Destination IP Address Register
+#define W5500_Sn_DIPR1         0x000D
+#define W5500_Sn_DIPR2         0x000E
+#define W5500_Sn_DIPR3         0x000F
+#define W5500_Sn_DPORT0        0x0010 // socket n Destination Port Register
+#define W5500_Sn_DPORT1        0x0011
+#define W5500_Sn_MSSR0         0x0012 // socket n Maximum Segment Size Register
+#define W5500_Sn_MSSR1         0x0013
+#define W5500_Sn_TOS           0x0015 // socket n Type of Service Register
+#define W5500_Sn_TTL           0x0016 // socket n Time to Live Register
+#define W5500_Sn_RXBUF_SIZE    0x001E // socket n RX Buffer Size Register
+#define W5500_Sn_TXBUF_SIZE    0x001F // socket n TX Buffer Size Register
+#define W5500_Sn_TX_FSR0       0x0020 // socket n TX Free Size Register
+#define W5500_Sn_TX_FSR1       0x0021
+#define W5500_Sn_TX_RD0        0x0022 // socket n TX Read Pointer Register
+#define W5500_Sn_TX_RD1        0x0023
+#define W5500_Sn_TX_WR0        0x0024 // socket n TX Write Pointer Register
+#define W5500_Sn_TX_WR1        0x0025
+#define W5500_Sn_RX_RSR0       0x0026 // socket n RX Received Size Register
+#define W5500_Sn_RX_RSR1       0x0027
+#define W5500_Sn_RX_RD0        0x0028 // socket n RX Read Pointer Register
+#define W5500_Sn_RX_RD1        0x0029
+#define W5500_Sn_RX_WR0        0x002A // socket n RX Write Pointer Register
+#define W5500_Sn_RX_WR1        0x002B
+#define W5500_Sn_IMR           0x002C // socket n Interrupt Mask Register
+#define W5500_Sn_FRAG0         0x002D // socket n Fragment Register
+#define W5500_Sn_FRAG1         0x002E
+#define W5500_Sn_KPALVTR       0x002F // socket n Keep Alive Timer Register
+
+
+
+
 #endif
