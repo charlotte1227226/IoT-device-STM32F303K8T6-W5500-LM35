@@ -23,26 +23,48 @@ typedef enum {
     W5500_BUSY = 7,
 } W5500_StatusTypeDef;
 
+typedef struct {
+    uint8_t MAC[6]; // MAC address
+    uint8_t IP[4]; // IP address
+    uint8_t SUBNET[4]; // Subnet mask
+    uint8_t GATEWAY[4]; // Gateway address
+    uint16_t RetryTime; // Retry time
+    uint8_t RetryCount; // Retry count
+    uint8_t PHYCFGR; // PHY configuration
+    uint8_t Version; // Version
+} W5500_DevTypeDef;
+
 
 /* Operation Mode */
 #define W5500_OM_VDM   0x00
 #define W5500_OM_FDM1  0x01
 #define W5500_OM_FDM2  0x02
 /* -------------- */
+
+
 /* Read or Write */
 #define W5500_READ     0x00
 #define W5500_WRITE    0x01
+/* ------------- */
+
+
 /* Socket Number Block (BSB)  */
 #define W5500_BSB_COMMON        0x00
 #define W5500_BSB_SOCKET_REG(n)     ((uint8_t)(0x01 + ((n) << 2)))
 #define W5500_BSB_SOCKET_TX(n)      ((uint8_t)(0x02 + ((n) << 2)))
 #define W5500_BSB_SOCKET_RX(n)      ((uint8_t)(0x03 + ((n) << 2)))
 /* -------------------------  */
+
+
 /* Control Byte */
 static inline uint8_t W5500_CONTROL_BYTE(uint8_t bsb, uint8_t rw, uint8_t om) {
     return (uint8_t)((bsb << 3) | (rw << 2) | (om));
 }
+// static 不會被外部檔案看到或重複定義。
+// inline 函式：適合非常短小、頻繁呼叫的工具函式。放在.h檔案
 /* ------------ */
+
+
 /* W5500 register definition ------------------------------------------------*/
 /* Offset Address for Common Register ---------------------------------------*/
 #define W5500_MR               0x0000 // Mode Register
@@ -65,7 +87,7 @@ static inline uint8_t W5500_CONTROL_BYTE(uint8_t bsb, uint8_t rw, uint8_t om) {
 #define W5500_SIPR2            0x0011
 #define W5500_SIPR3            0x0012
 #define W5500_INTLEVEL0        0x0013 // Interrupt Low Level Timer 
-#define W5500_INTLEVEL0        0x0014 
+#define W5500_INTLEVEL1        0x0014 
 #define W5500_IR               0x0015 // Interrupt Register
 #define W5500_IMR              0x0016 // Interrupt Mask Register
 #define W5500_SIR              0x0017 // Socket Interrupt Register
@@ -135,7 +157,9 @@ static inline uint8_t W5500_CONTROL_BYTE(uint8_t bsb, uint8_t rw, uint8_t om) {
 #define W5500_Sn_FRAG1         0x002E
 #define W5500_Sn_KPALVTR       0x002F // socket n Keep Alive Timer Register
 
-
-
-
+W5500_StatusTypeDef W5500_Init(SPI_HandleTypeDef *hspi, W5500_DevTypeDef *dev);
+W5500_StatusTypeDef W5500_Write_Byte(SPI_HandleTypeDef *hspi, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
+W5500_StatusTypeDef W5500_Write_Bytes(SPI_HandleTypeDef *hspi, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
+W5500_StatusTypeDef W5500_Read_Byte(SPI_HandleTypeDef *hspi, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
+W5500_StatusTypeDef W5500_Read_Bytes(SPI_HandleTypeDef *hspi, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
 #endif

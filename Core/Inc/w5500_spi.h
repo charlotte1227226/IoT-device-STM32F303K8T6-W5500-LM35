@@ -10,6 +10,7 @@
 #include "stm32f3xx_hal.h"
 #include "spi.h"
 #include "gpio.h"
+#include <stdint.h>
 
 typedef enum
 {
@@ -30,4 +31,9 @@ typedef enum
 SPI_StatusTypeDef SPI_Init(SPI_HandleTypeDef *hspi);
 SPI_StatusTypeDef SPI_Write(SPI_HandleTypeDef *hspi, uint8_t *reg_addr, uint8_t *pData, uint16_t Size, uint32_t addr_size);
 SPI_StatusTypeDef SPI_Read(SPI_HandleTypeDef *hspi, uint8_t *reg_addr, uint8_t *pData, uint16_t Size, uint32_t addr_size);
+void SPI_CS_ENABLE(SPI_HandleTypeDef *hspi);
+void SPI_CS_DISABLE(SPI_HandleTypeDef *hspi);
+void SPI_Reset(SPI_HandleTypeDef *hspi);
+void SPI_Delay(uint32_t delay);
+
 #endif

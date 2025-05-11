@@ -25,7 +25,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "w5500.h"
+#include "w5500_spi.h"
+#include "w5500_socket.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
