@@ -40,7 +40,7 @@ typedef enum {
 /* -------------------------  */
 /* Control Byte */
 static inline uint8_t W5500_CONTROL_BYTE(uint8_t bsb, uint8_t rw, uint8_t om) {
-    return (uint8_t)((bsb << 3) | (rw << 2) | (om & 03));
+    return (uint8_t)((bsb << 3) | (rw << 2) | (om));
 }
 /* ------------ */
 /* W5500 register definition ------------------------------------------------*/
