@@ -66,7 +66,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "IoTdeviceV1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-IoTdeviceV1-Debug-5d9cc1343b0a63e8e7a3.json",
+					"jsonFile" : "target-IoTdeviceV1-Debug-571601596b4f01fea169.json",
 					"name" : "IoTdeviceV1",
 					"projectIndex" : 0
 				}
@@ -82,6 +82,6 @@
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 8
+		"minor" : 6
 	}
 }
