@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/andy2/OneDrive/\u684c\u9762/STM32/IoTdeviceV1/build/Debug/cmake_install.cmake",
+		"C:/Users/andy2/OneDrive/\u684c\u9762/STM32/IoTdeviceV1/build/Debug/cmake/stm32cubemx/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
