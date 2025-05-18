@@ -95,7 +95,6 @@ int main(void)
   MX_SPI1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -139,15 +138,6 @@ int main(void)
     uint32_t cr1 = hspi1.Instance->CR1;
     // bit1 = CPOL, bit0 = CPHA
     printf("SPI1 CR1 = 0x%08lX (CPOL=%d, CPHA=%d)\n", cr1, (cr1 & SPI_CR1_CPOL)>>1, (cr1 & SPI_CR1_CPHA)>>0);    // // 測試寫入 W5500_GAR0
-    // 1. 清除 W5500 軟體重置（MR 寄存器 bit7）
-    uint8_t mr_reset_clear = 0x00;
-    if(W5500_Write_Byte(SPI1_ID, W5500_MR, &mr_reset_clear) != W5500_OK) {
-      printf("清除 W5500 軟體重置失敗\n");
-    } 
-    else {
-      printf("清除 W5500 軟體重置成功\n");
-    }
-    SPI_Delay(2);  // 等待重置完成
     uint8_t write_val = 0xC0, read_val;
     if (W5500_Write_Byte(SPI1_ID, W5500_GAR0, &write_val) != W5500_OK) {
       printf("寫入 W5500_GAR0 失敗\n");

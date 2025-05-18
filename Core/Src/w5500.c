@@ -11,6 +11,15 @@ W5500_StatusTypeDef W5500_Init(uint8_t spi_id, W5500_DevTypeDef *dev){
     if(SPI_Init(spi_id) != SPI_OK){
         return W5500_ERROR;
     }
+    // 1. 清除 W5500 軟體重置（MR 寄存器 bit7）
+    uint8_t mr_reset_clear = 0x00;
+    if(W5500_Write_Byte(SPI1_ID, W5500_MR, &mr_reset_clear) != W5500_OK) {
+        printf("清除 W5500 軟體重置失敗\n");
+    } 
+    else {
+        printf("清除 W5500 軟體重置成功\n");
+    }
+    SPI_Delay(2);  // 等待重置完成
     dev -> MAC[0] = 0x00;
     dev -> MAC[1] = 0x08;
     dev -> MAC[2] = 0xDC;
