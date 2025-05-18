@@ -158,9 +158,9 @@ static inline uint8_t W5500_CONTROL_BYTE(uint8_t bsb, uint8_t rw, uint8_t om) {
 #define W5500_Sn_KPALVTR       0x002F // socket n Keep Alive Timer Register
 
 W5500_StatusTypeDef W5500_Init(uint8_t spi_id, W5500_DevTypeDef *dev);
-W5500_StatusTypeDef W5500_Write_Byte(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
+W5500_StatusTypeDef W5500_Write_Byte(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData);
 W5500_StatusTypeDef W5500_Write_Bytes(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
-W5500_StatusTypeDef W5500_Read_Byte(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
+W5500_StatusTypeDef W5500_Read_Byte(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData);
 W5500_StatusTypeDef W5500_Read_Bytes(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
 
 #endif

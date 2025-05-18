@@ -112,12 +112,32 @@ int main(void)
     float temperature_C = voltage * 10.0; // LM35 每 10mV = 1°C
     printf("ADC raw: %u, voltage: %.2f V, temperature: %.2f °C\r\n", raw, voltage, temperature_C);
     HAL_Delay(500);
-    SPI_CS_DISABLE(SPI1_ID);
-    HAL_Delay(40);
-    SPI_CS_ENABLE(SPI1_ID);
-    HAL_Delay(20);
-    SPI_CS_DISABLE(SPI1_ID);
-    HAL_Delay(40);
+    // W5500 初始化
+    W5500_DevTypeDef w5500_dev;
+    W5500_StatusTypeDef status = W5500_Init(SPI1_ID, &w5500_dev);
+    if (status != W5500_OK) {
+        printf("W5500 initialization failed\n");
+        continue;
+    }
+    printf("W5500 initialized successfully\n");
+    printf("MAC: %02X:%02X:%02X:%02X:%02X:%02X\n", w5500_dev.MAC[0], w5500_dev.MAC[1], w5500_dev.MAC[2], w5500_dev.MAC[3], w5500_dev.MAC[4], w5500_dev.MAC[5]);
+    SPI_Delay(10);
+    printf("IP: %d.%d.%d.%d\n", w5500_dev.IP[0], w5500_dev.IP[1], w5500_dev.IP[2], w5500_dev.IP[3]);
+    SPI_Delay(10);
+    printf("Subnet: %d.%d.%d.%d\n", w5500_dev.SUBNET[0], w5500_dev.SUBNET[1], w5500_dev.SUBNET[2], w5500_dev.SUBNET[3]);
+    SPI_Delay(10);
+    printf("Gateway: %d.%d.%d.%d\n", w5500_dev.GATEWAY[0], w5500_dev.GATEWAY[1], w5500_dev.GATEWAY[2], w5500_dev.GATEWAY[3]);
+    SPI_Delay(10);
+    printf("Retry Time: %d\n", w5500_dev.RetryTime);
+    SPI_Delay(10);
+    printf("Retry Count: %d\n", w5500_dev.RetryCount);
+    SPI_Delay(10);
+    printf("PHYCFGR: %02X\n", w5500_dev.PHYCFGR);
+    SPI_Delay(10);
+    printf("Version: %02X\n", w5500_dev.Version);
+    SPI_Delay(10);
+    // write address
+    
   }
   /* USER CODE END 3 */
 }
