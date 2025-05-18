@@ -157,10 +157,10 @@ static inline uint8_t W5500_CONTROL_BYTE(uint8_t bsb, uint8_t rw, uint8_t om) {
 #define W5500_Sn_FRAG1         0x002E
 #define W5500_Sn_KPALVTR       0x002F // socket n Keep Alive Timer Register
 
-W5500_StatusTypeDef W5500_Init(SPI_HandleTypeDef *hspi, W5500_DevTypeDef *dev);
-W5500_StatusTypeDef W5500_Write_Byte(SPI_HandleTypeDef *hspi, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
-W5500_StatusTypeDef W5500_Write_Bytes(SPI_HandleTypeDef *hspi, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
-W5500_StatusTypeDef W5500_Read_Byte(SPI_HandleTypeDef *hspi, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
-W5500_StatusTypeDef W5500_Read_Bytes(SPI_HandleTypeDef *hspi, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
+W5500_StatusTypeDef W5500_Init(uint8_t spi_id, W5500_DevTypeDef *dev);
+W5500_StatusTypeDef W5500_Write_Byte(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
+W5500_StatusTypeDef W5500_Write_Bytes(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
+W5500_StatusTypeDef W5500_Read_Byte(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
+W5500_StatusTypeDef W5500_Read_Bytes(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
 
 #endif

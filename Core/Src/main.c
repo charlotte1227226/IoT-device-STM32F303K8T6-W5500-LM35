@@ -103,6 +103,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
     HAL_ADC_Start(&hadc1);
     HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
@@ -111,6 +112,12 @@ int main(void)
     float temperature_C = voltage * 10.0; // LM35 每 10mV = 1°C
     printf("ADC raw: %u, voltage: %.2f V, temperature: %.2f °C\r\n", raw, voltage, temperature_C);
     HAL_Delay(500);
+    SPI_CS_DISABLE(SPI1_ID);
+    HAL_Delay(40);
+    SPI_CS_ENABLE(SPI1_ID);
+    HAL_Delay(20);
+    SPI_CS_DISABLE(SPI1_ID);
+    HAL_Delay(40);
   }
   /* USER CODE END 3 */
 }
