@@ -39,6 +39,7 @@ typedef struct {
 #define W5500_OM_VDM   0x00
 #define W5500_OM_FDM1  0x01
 #define W5500_OM_FDM2  0x02
+#define W5500_OM_FDM3  0x03
 /* -------------- */
 
 
