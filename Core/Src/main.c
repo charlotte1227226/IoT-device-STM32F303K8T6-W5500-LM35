@@ -137,27 +137,24 @@ int main(void)
     printf("Version: %02X\n", w5500_dev.Version);
     SPI_Delay(10);
     uint32_t cr1 = hspi1.Instance->CR1;
-    uint8_t tx = 0xA5;
-    HAL_SPI_Transmit(&hspi1, &tx, 1, 10);
+    // bit1 = CPOL, bit0 = CPHA
+    printf("SPI1 CR1 = 0x%08lX (CPOL=%d, CPHA=%d)\n", cr1, (cr1 & SPI_CR1_CPOL)>>1, (cr1 & SPI_CR1_CPHA)>>0);    // // 測試寫入 W5500_GAR0
+    uint8_t write_val = 0xC0, read_val;
+    if (W5500_Write_Byte(SPI1_ID, W5500_GAR0, &write_val) != W5500_OK) {
+      printf("寫入 W5500_GAR0 失敗\n");
+    } 
+    else {
+      printf("寫入 W5500_GAR0 成功\n");
+    }
+    // 給點時間讓 W5500 處理
     SPI_Delay(1);
-    // // bit1 = CPOL, bit0 = CPHA
-    // printf("SPI1 CR1 = 0x%08lX (CPOL=%d, CPHA=%d)\n", cr1, (cr1 & SPI_CR1_CPOL)>>1, (cr1 & SPI_CR1_CPHA)>>0);    // // 測試寫入 W5500_GAR0
-    // uint8_t write_val = 0xC0, read_val;
-    // if (W5500_Write_Byte(SPI1_ID, W5500_GAR0, &write_val) != W5500_OK) {
-    //   printf("寫入 W5500_GAR0 失敗\n");
-    // } 
-    // else {
-    //   printf("寫入 W5500_GAR0 成功\n");
-    // }
-    // // 給點時間讓 W5500 處理
-    // SPI_Delay(1);
-    // // 測試讀取 PHYCFGR
-    // if (W5500_Read_Byte(SPI1_ID, W5500_GAR0, &read_val) != W5500_OK) {
-    //   printf("讀取 W5500_GAR0 失敗\n");
-    // } 
-    // else {
-    //   printf("讀取 W5500_GAR0 成功：0x%02X\n", read_val);
-    // }
+    // 測試讀取 PHYCFGR
+    if (W5500_Read_Byte(SPI1_ID, W5500_GAR0, &read_val) != W5500_OK) {
+      printf("讀取 W5500_GAR0 失敗\n");
+    } 
+    else {
+      printf("讀取 W5500_GAR0 成功：0x%02X\n", read_val);
+    }
   }
   /* USER CODE END 3 */
 }
