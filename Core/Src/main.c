@@ -108,7 +108,7 @@ int main(void)
     HAL_ADC_Start(&hadc1);
     HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
     uint16_t raw = HAL_ADC_GetValue(&hadc1);
-    float voltage = (float)raw / 4095.0 * 3.3; // 單位：V
+    float voltage = ((float)raw / 4095.0) * 3.3; // 單位：V
     float temperature_C = voltage * 10.0; // LM35 每 10mV = 1°C
     printf("ADC raw: %u, voltage: %.2f V, temperature: %.2f °C\r\n", raw, voltage, temperature_C);
     HAL_Delay(500);
