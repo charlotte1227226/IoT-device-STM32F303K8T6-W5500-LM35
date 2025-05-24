@@ -163,5 +163,6 @@ W5500_StatusTypeDef W5500_Write_Byte(uint8_t spi_id, uint8_t bsb, uint16_t reg_a
 W5500_StatusTypeDef W5500_Write_Bytes(uint8_t spi_id, uint8_t bsb, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
 W5500_StatusTypeDef W5500_Read_Byte(uint8_t spi_id, uint8_t bsb, uint16_t reg_addr, uint8_t *pData);
 W5500_StatusTypeDef W5500_Read_Bytes(uint8_t spi_id, uint8_t bsb, uint16_t reg_addr, uint8_t *pData, uint16_t Size);
+W5500_StatusTypeDef W5500_Read_Init(uint8_t spi_id, W5500_DevTypeDef *dev);
 
 #endif

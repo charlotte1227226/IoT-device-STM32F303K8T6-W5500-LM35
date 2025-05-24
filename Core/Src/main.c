@@ -138,26 +138,24 @@ int main(void)
     uint32_t cr1 = hspi1.Instance->CR1;
     // bit1 = CPOL, bit0 = CPHA
     printf("SPI1 CR1 = 0x%08lX (CPOL=%d, CPHA=%d)\n", cr1, (cr1 & SPI_CR1_CPOL)>>1, (cr1 & SPI_CR1_CPHA)>>0);    // // 測試寫入 W5500_GAR0
-    uint8_t write_val[4] = {0xC0, 0xA8, 0x00, 0x01}; // Gateway Address:
-    uint8_t read_val[4] = {0};
-    if (W5500_Write_Bytes(SPI1_ID, W5500_BSB_COMMON, W5500_GAR0, &write_val, 4) != W5500_OK) {
-      printf("寫入 W5500_GAR0 失敗\n");
-    } 
-    else {
-      printf("寫入 W5500_GAR0 成功\n");
-    }
-    // 給點時間讓 W5500 處理
-    SPI_Delay(1);
-    // 測試讀取 Gateway Address Register（GAR0）
-    if (W5500_Read_Bytes(SPI1_ID, W5500_BSB_COMMON, W5500_GAR0, &read_val, 4) != W5500_OK) {
-      printf("讀取 W5500_GAR0 失敗\n");
-    } 
-    else {
-      printf("讀取 W5500_GAR0 成功：0x%02X, 0x%02X, 0x%02X, 0x%02X\n", read_val[0], read_val[1], read_val[2], read_val[3]);
-    }
-     // 顯示結果
-    printf("read Gateway Address: %02X:%02X:%02X:%02X\n", read_val[0], read_val[1], read_val[2], read_val[3]);
-    printf("write Gateway Address: %02X:%02X:%02X:%02X\n", write_val[0], write_val[1], write_val[2], write_val[3]);
+    W5500_DevTypeDef w5500_dev_test;
+    W5500_StatusTypeDef test_status = W5500_Read_Init(SPI1_ID, &w5500_dev_test);
+    printf("read ------\n");
+    printf("MAC: %02X:%02X:%02X:%02X:%02X:%02X\n", w5500_dev_test.MAC[0], w5500_dev_test.MAC[1], w5500_dev_test.MAC[2], w5500_dev_test.MAC[3], w5500_dev_test.MAC[4], w5500_dev_test.MAC[5]);
+    SPI_Delay(10);
+    printf("IP: %d.%d.%d.%d\n", w5500_dev_test.IP[0], w5500_dev_test.IP[1], w5500_dev_test.IP[2], w5500_dev_test.IP[3]);
+    SPI_Delay(10);
+    printf("Subnet: %d.%d.%d.%d\n", w5500_dev_test.SUBNET[0], w5500_dev_test.SUBNET[1], w5500_dev_test.SUBNET[2], w5500_dev_test.SUBNET[3]);
+    SPI_Delay(10);
+    printf("Gateway: %d.%d.%d.%d\n", w5500_dev_test.GATEWAY[0], w5500_dev_test.GATEWAY[1], w5500_dev_test.GATEWAY[2], w5500_dev_test.GATEWAY[3]);
+    SPI_Delay(10);
+    printf("Retry Time: %d\n", w5500_dev_test.RetryTime);
+    SPI_Delay(10);
+    printf("Retry Count: %d\n", w5500_dev_test.RetryCount);
+    SPI_Delay(10);
+    printf("PHYCFGR: %02X\n", w5500_dev_test.PHYCFGR);
+    SPI_Delay(10);
+    printf("Version: %02X\n", w5500_dev_test.Version);
   }
   /* USER CODE END 3 */
 }
