@@ -95,6 +95,11 @@ int main(void)
   MX_SPI1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  // W5500 初始化
+  SPI_Delay(10); // 等待 SPI 初始化穩定
+  W5500_DevTypeDef w5500_dev;
+  W5500_StatusTypeDef status = W5500_Init(SPI1_ID, &w5500_dev);
+  SPI_Delay(10); // 等待 W5500 初始化穩定
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -104,6 +109,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    if (status != W5500_OK) {
+    printf("W5500 initialization failed\n");
+    }
+    printf("W5500 initialized successfully\n");
     HAL_ADC_Start(&hadc1);
     HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
     uint16_t raw = HAL_ADC_GetValue(&hadc1);
@@ -111,14 +120,6 @@ int main(void)
     float temperature_C = voltage * 10.0; // LM35 每 10mV = 1°C
     printf("ADC raw: %u, voltage: %.2f V, temperature: %.2f °C\r\n", raw, voltage, temperature_C);
     HAL_Delay(500);
-    // W5500 初始化
-    W5500_DevTypeDef w5500_dev;
-    W5500_StatusTypeDef status = W5500_Init(SPI1_ID, &w5500_dev);
-    if (status != W5500_OK) {
-        printf("W5500 initialization failed\n");
-        continue;
-    }
-    printf("W5500 initialized successfully\n");
     printf("MAC: %02X:%02X:%02X:%02X:%02X:%02X\n", w5500_dev.MAC[0], w5500_dev.MAC[1], w5500_dev.MAC[2], w5500_dev.MAC[3], w5500_dev.MAC[4], w5500_dev.MAC[5]);
     SPI_Delay(10);
     printf("IP: %d.%d.%d.%d\n", w5500_dev.IP[0], w5500_dev.IP[1], w5500_dev.IP[2], w5500_dev.IP[3]);

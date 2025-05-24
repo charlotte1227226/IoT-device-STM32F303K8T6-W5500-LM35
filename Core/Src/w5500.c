@@ -29,7 +29,7 @@ W5500_StatusTypeDef W5500_Init(uint8_t spi_id, W5500_DevTypeDef *dev){
     dev -> IP[0] = 192;
     dev -> IP[1] = 168;
     dev -> IP[2] = 0;
-    dev -> IP[3] = 100;
+    dev -> IP[3] = 20;
     dev -> SUBNET[0] = 255;
     dev -> SUBNET[1] = 255;
     dev -> SUBNET[2] = 255;
@@ -124,9 +124,6 @@ W5500_StatusTypeDef W5500_Read_Bytes(uint8_t spi_id, uint8_t bsb, uint16_t reg_a
 }
 
 W5500_StatusTypeDef W5500_Read_Init(uint8_t spi_id, W5500_DevTypeDef *dev){
-    if(SPI_Init(spi_id) != SPI_OK){
-        return W5500_ERROR;
-    }
     if(W5500_Read_Bytes(spi_id, W5500_BSB_COMMON, W5500_SHAR0, dev->MAC, 6) != W5500_OK) {
         printf("讀取 MAC 地址失敗\n");
         return W5500_READ_ERROR;
