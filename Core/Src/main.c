@@ -157,6 +157,17 @@ int main(void)
     printf("PHYCFGR: %02X\n", w5500_dev_test.PHYCFGR);
     SPI_Delay(10);
     printf("Version: %02X\n", w5500_dev_test.Version);
+    SPI_Delay(10);
+    uint8_t phycfgr;
+    W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_PHYCFGR, &phycfgr);
+    printf("PHYCFGR: 0x%02X → LNK=%d SPD=%d DPX=%d\n", phycfgr, phycfgr&0x01, (phycfgr>>1)&0x01, (phycfgr>>2)&0x01);
+    uint8_t IR, IMR, SIMR, SIR;
+    W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_IR, &IR);
+    W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_IMR, &IMR);
+    W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_SIMR, &SIMR);
+    W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_SIR, &SIR);
+    printf("IR: 0x%02X, IMR: 0x%02X, SIMR: 0x%02X, SIR: 0x%02X\n", IR, IMR, SIMR, SIR);
+
   }
   /* USER CODE END 3 */
 }

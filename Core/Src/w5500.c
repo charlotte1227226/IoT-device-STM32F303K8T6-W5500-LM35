@@ -40,8 +40,9 @@ W5500_StatusTypeDef W5500_Init(uint8_t spi_id, W5500_DevTypeDef *dev){
     dev -> GATEWAY[3] = 1;
     dev -> RetryTime = 2000;
     dev -> RetryCount = 8;
-    dev -> PHYCFGR = 0x00;
+    dev->PHYCFGR = 0xF8;  // bit7=RST=0, bit6=OPMD=1 (auto-negotiation), bit5~3=OPMDC=111
     dev -> Version = 0x00;
+    
     W5500_Write_Bytes(spi_id, W5500_BSB_COMMON, W5500_SHAR0, dev->MAC, 6); 
     W5500_Write_Bytes(spi_id, W5500_BSB_COMMON, W5500_GAR0, dev->GATEWAY, 4); 
     W5500_Write_Bytes(spi_id, W5500_BSB_COMMON, W5500_SUBR0, dev->SUBNET, 4); 
@@ -60,6 +61,13 @@ W5500_StatusTypeDef W5500_Init(uint8_t spi_id, W5500_DevTypeDef *dev){
         dev->Version = version;
         printf("W5500 版本: %02X\n", dev->Version);
     }
+
+    uint8_t zero = 0x00;
+    W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_IMR, &zero);
+    W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_SIMR, &zero);
+    uint8_t clear_ir = 0xF0;  // Bit 7~4：CONFLICT, UNREACH, PPPoE, MP
+    W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_IR, &clear_ir);
+    W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_SIR, &zero);
     return W5500_OK;
 }
 
