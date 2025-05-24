@@ -13,7 +13,7 @@ W5500_StatusTypeDef W5500_Init(uint8_t spi_id, W5500_DevTypeDef *dev){
     }
     // 1. 清除 W5500 軟體重置（MR 寄存器 bit7）
     uint8_t mr_reset_clear = 0x00;
-    if(W5500_Write_Byte(SPI1_ID, W5500_MR, &mr_reset_clear) != W5500_OK) {
+    if(W5500_Write_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_MR, &mr_reset_clear) != W5500_OK) {
         printf("清除 W5500 軟體重置失敗\n");
     } 
     else {
@@ -45,11 +45,11 @@ W5500_StatusTypeDef W5500_Init(uint8_t spi_id, W5500_DevTypeDef *dev){
     return W5500_OK;
 }
 
-W5500_StatusTypeDef W5500_Write_Byte(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData){
+W5500_StatusTypeDef W5500_Write_Byte(uint8_t spi_id, uint8_t bsb, uint16_t reg_addr, uint8_t *pData){
     uint8_t tx_data[4];
     tx_data[0] = (reg_addr >> 8) & 0xFF;
     tx_data[1] = reg_addr & 0xFF;
-    tx_data[2] = W5500_CONTROL_BYTE(W5500_BSB_COMMON, W5500_WRITE, W5500_OM_VDM);
+    tx_data[2] = W5500_CONTROL_BYTE(bsb, W5500_WRITE, W5500_OM_VDM);
     tx_data[3] = *pData;
     SPI_CS_ENABLE(spi_id);
     if(SPI_Write(spi_id, 0, tx_data, 1, 3) != SPI_OK){
@@ -60,11 +60,11 @@ W5500_StatusTypeDef W5500_Write_Byte(uint8_t spi_id, uint16_t reg_addr, uint8_t 
     return W5500_OK;
 }
 
-W5500_StatusTypeDef W5500_Write_Bytes(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData, uint16_t Size){
+W5500_StatusTypeDef W5500_Write_Bytes(uint8_t spi_id, uint8_t bsb, uint16_t reg_addr, uint8_t *pData, uint16_t Size){
     uint8_t tx_data[Size + 3];
     tx_data[0] = (reg_addr >> 8) & 0xFF;
     tx_data[1] = reg_addr & 0xFF;
-    tx_data[2] = W5500_CONTROL_BYTE(W5500_BSB_COMMON, W5500_WRITE, W5500_OM_VDM);
+    tx_data[2] = W5500_CONTROL_BYTE(bsb, W5500_WRITE, W5500_OM_VDM);
     for(int i = 0; i < Size; i++){
         tx_data[i + 3] = pData[i];
     }
@@ -77,11 +77,11 @@ W5500_StatusTypeDef W5500_Write_Bytes(uint8_t spi_id, uint16_t reg_addr, uint8_t
     return W5500_OK;
 }
 
-W5500_StatusTypeDef W5500_Read_Byte(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData){
+W5500_StatusTypeDef W5500_Read_Byte(uint8_t spi_id, uint8_t bsb, uint16_t reg_addr, uint8_t *pData){
     uint8_t tx_data[3];
     tx_data[0] = (reg_addr >> 8) & 0xFF;
     tx_data[1] = reg_addr & 0xFF;
-    tx_data[2] = W5500_CONTROL_BYTE(W5500_BSB_COMMON, W5500_READ, W5500_OM_VDM);
+    tx_data[2] = W5500_CONTROL_BYTE(bsb, W5500_READ, W5500_OM_VDM);
     SPI_CS_ENABLE(spi_id);
     if(SPI_Read(spi_id, tx_data, pData, 1, 3) != SPI_OK){
         SPI_CS_DISABLE(spi_id);
@@ -91,11 +91,11 @@ W5500_StatusTypeDef W5500_Read_Byte(uint8_t spi_id, uint16_t reg_addr, uint8_t *
     return W5500_OK;
 }
 
-W5500_StatusTypeDef W5500_Read_Bytes(uint8_t spi_id, uint16_t reg_addr, uint8_t *pData, uint16_t Size){
+W5500_StatusTypeDef W5500_Read_Bytes(uint8_t spi_id, uint8_t bsb, uint16_t reg_addr, uint8_t *pData, uint16_t Size){
     uint8_t tx_data[3];
     tx_data[0] = (reg_addr >> 8) & 0xFF;
     tx_data[1] = reg_addr & 0xFF;
-    tx_data[2] = W5500_CONTROL_BYTE(W5500_BSB_COMMON, W5500_READ, W5500_OM_VDM);
+    tx_data[2] = W5500_CONTROL_BYTE(bsb, W5500_READ, W5500_OM_VDM);
     SPI_CS_ENABLE(spi_id);
     if(SPI_Read(spi_id, tx_data, pData, Size, 3) != SPI_OK){
         SPI_CS_DISABLE(spi_id);

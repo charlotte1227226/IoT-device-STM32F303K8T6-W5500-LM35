@@ -138,8 +138,9 @@ int main(void)
     uint32_t cr1 = hspi1.Instance->CR1;
     // bit1 = CPOL, bit0 = CPHA
     printf("SPI1 CR1 = 0x%08lX (CPOL=%d, CPHA=%d)\n", cr1, (cr1 & SPI_CR1_CPOL)>>1, (cr1 & SPI_CR1_CPHA)>>0);    // // 測試寫入 W5500_GAR0
-    uint8_t write_val = 0xC0, read_val;
-    if (W5500_Write_Byte(SPI1_ID, W5500_GAR0, &write_val) != W5500_OK) {
+    uint8_t write_val[4] = {0xC0, 0xA8, 0x00, 0x01}; // Gateway Address:
+    uint8_t read_val[4] = {0};
+    if (W5500_Write_Bytes(SPI1_ID, W5500_BSB_COMMON, W5500_GAR0, &write_val, 4) != W5500_OK) {
       printf("寫入 W5500_GAR0 失敗\n");
     } 
     else {
@@ -148,14 +149,15 @@ int main(void)
     // 給點時間讓 W5500 處理
     SPI_Delay(1);
     // 測試讀取 Gateway Address Register（GAR0）
-    if (W5500_Read_Byte(SPI1_ID, W5500_GAR0, &read_val) != W5500_OK) {
+    if (W5500_Read_Bytes(SPI1_ID, W5500_BSB_COMMON, W5500_GAR0, &read_val, 4) != W5500_OK) {
       printf("讀取 W5500_GAR0 失敗\n");
     } 
     else {
-      printf("讀取 W5500_GAR0 成功：0x%02X\n", read_val);
+      printf("讀取 W5500_GAR0 成功：0x%02X, 0x%02X, 0x%02X, 0x%02X\n", read_val[0], read_val[1], read_val[2], read_val[3]);
     }
      // 顯示結果
-    printf("期望值：0x%02X，讀回值：0x%02X → %s\n", write_val, read_val, (write_val == read_val) ? "✅成功" : "❌失敗");
+    printf("read Gateway Address: %02X:%02X:%02X:%02X\n", read_val[0], read_val[1], read_val[2], read_val[3]);
+    printf("write Gateway Address: %02X:%02X:%02X:%02X\n", write_val[0], write_val[1], write_val[2], write_val[3]);
   }
   /* USER CODE END 3 */
 }
