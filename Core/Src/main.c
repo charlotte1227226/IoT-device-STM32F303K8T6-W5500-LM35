@@ -236,15 +236,17 @@ int main(void)
     printf("Sn_TX_SIZE:  0x%02X\n", read_tx_size);
     printf("Sn_RX_SIZE:  0x%02X\n", read_rx_size);
     SPI_Delay(20);
-    // 嘗試進入 LISTEN 狀態（TCP server）
-    W5500_SocketTypeDef socket_test1;
-    if (W5500_Socket_Listen(SPI1_ID, 0, &socket_test1) != W5500_OK) {
+    // 進入 LISTEN 狀態（TCP server）
+    if (W5500_Socket_Listen(SPI1_ID, W5500_Socket0, &socket_test) != W5500_OK) {
       printf("讀取SR中...\n");
     } 
     if(read_sr != SOCK_LISTEN){
       printf("Socket 0 進入 LISTEN 失敗\n");
     }
     printf("Socket 0 進入 LISTEN 成功\n");
+    if (W5500_Socket_Check_Established(SPI1_ID, W5500_Socket0, &socket_test) != W5500_OK) {
+      printf("讀取SR中...\n");
+    } 
     SPI_Delay(20);
   }
   /* USER CODE END 3 */

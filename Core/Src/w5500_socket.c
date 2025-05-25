@@ -109,11 +109,9 @@ W5500_StatusTypeDef W5500_Socket_Listen(uint8_t spi_id,uint8_t socket_num, W5500
     uint8_t check_cr, check_sr;
     uint32_t timeout = 1000;
     if(W5500_Read_Byte(spi_id, socket_bsb, W5500_Sn_SR, &check_sr) != W5500_OK){
-        printf("1\n");
         return W5500_ERROR;
     }
     if (check_sr != SOCK_INIT) {
-        printf("2\n");
         return W5500_ERROR;
     }
     do {
@@ -124,17 +122,14 @@ W5500_StatusTypeDef W5500_Socket_Listen(uint8_t spi_id,uint8_t socket_num, W5500
         printf("Timeout waiting for Sn_CR to clear\n");
         return W5500_TIMEOUT;
     }
-    if(W5500_Write_Byte(spi_id, socket_bsb, W5500_Sn_CR, &socket_command) != W5500_OK){
-        printf("3\n");
+    if(W5500_Write_Byte(spi_id, socket_bsb, W5500_Sn_CR, &socket_command) != W5500_OK){;
         return W5500_ERROR;
     }
     uint8_t sr;
     if(W5500_Read_Byte(spi_id, socket_bsb, W5500_Sn_SR, &sr) != W5500_OK){
-        printf("4\n");
         return W5500_ERROR;
     }
     if (sr != SOCK_LISTEN) {
-        printf("5\n");
         return W5500_ERROR;
     }
     socket -> state = SOCK_LISTEN;
@@ -143,3 +138,19 @@ W5500_StatusTypeDef W5500_Socket_Listen(uint8_t spi_id,uint8_t socket_num, W5500
     return W5500_OK;
 }
 
+W5500_StatusTypeDef W5500_Socket_Check_Established(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket){
+    uint8_t socket_bsb = W5500_BSB_SOCKET_REG(socket_num);
+    uint8_t check_sr;
+    uint32_t timeout = 1000;
+    if(W5500_Read_Byte(spi_id, socket_bsb, W5500_Sn_SR, &check_sr) != W5500_OK){
+        printf("Establish 讀取 Sn_SR 失敗\n");
+        return W5500_ERROR;
+    }
+    if (check_sr != SOCK_ESTABLISHED) {
+        printf("Sn_SR 不是 SOCK_ESTABLISHED\n");
+        return W5500_ERROR;
+    }
+    socket -> state = SOCK_ESTABLISHED;
+    printf("Socket %d 已建立連線！Sn_SR = 0x%02X\n", socket_num, check_sr);
+    return W5500_OK;
+}

@@ -92,6 +92,7 @@ W5500_StatusTypeDef W5500_Socket_Init(uint8_t spi_id,uint8_t socket_num, W5500_S
 W5500_StatusTypeDef W5500_Socket_Open(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket);
 W5500_StatusTypeDef W5500_Socket_Close(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket);
 W5500_StatusTypeDef W5500_Socket_Listen(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket);
+W5500_StatusTypeDef W5500_Socket_Check_Established(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket);
 W5500_StatusTypeDef W5500_Socket_Connect(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket);
 W5500_StatusTypeDef W5500_Socket_Send(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket, uint8_t *data, uint16_t size);
 W5500_StatusTypeDef W5500_Socket_Receive(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket, uint8_t *data, uint16_t size);
