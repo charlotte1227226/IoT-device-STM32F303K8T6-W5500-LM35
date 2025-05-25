@@ -13,7 +13,7 @@ W5500_StatusTypeDef W5500_Init(uint8_t spi_id, W5500_DevTypeDef *dev){
     }
     // 1. 清除 W5500 軟體重置（MR 寄存器 bit7）
     uint8_t mr_reset_clear = 0x00;
-    if(W5500_Write_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_MR, &mr_reset_clear) != W5500_OK) {
+    if(W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_MR, &mr_reset_clear) != W5500_OK) {
         printf("清除 W5500 軟體重置失敗\n");
     } 
     else {
@@ -42,17 +42,30 @@ W5500_StatusTypeDef W5500_Init(uint8_t spi_id, W5500_DevTypeDef *dev){
     dev -> RetryCount = 8;
     dev->PHYCFGR = 0xF8;  // bit7=RST=0, bit6=OPMD=1 (auto-negotiation), bit5~3=OPMDC=111
     dev -> Version = 0x00;
-    
-    W5500_Write_Bytes(spi_id, W5500_BSB_COMMON, W5500_SHAR0, dev->MAC, 6); 
-    W5500_Write_Bytes(spi_id, W5500_BSB_COMMON, W5500_GAR0, dev->GATEWAY, 4); 
-    W5500_Write_Bytes(spi_id, W5500_BSB_COMMON, W5500_SUBR0, dev->SUBNET, 4); 
-    W5500_Write_Bytes(spi_id, W5500_BSB_COMMON, W5500_SIPR0, dev->IP, 4); 
+    if(W5500_Write_Bytes(spi_id, W5500_BSB_COMMON, W5500_SHAR0, dev->MAC, 6) != W5500_OK){
+        return W5500_ERROR;
+    } 
+    if(W5500_Write_Bytes(spi_id, W5500_BSB_COMMON, W5500_GAR0, dev->GATEWAY, 4) != W5500_OK){
+        return W5500_ERROR;
+    }
+    if(W5500_Write_Bytes(spi_id, W5500_BSB_COMMON, W5500_SUBR0, dev->SUBNET, 4) != W5500_OK){
+        return W5500_ERROR;
+    }
+    if(W5500_Write_Bytes(spi_id, W5500_BSB_COMMON, W5500_SIPR0, dev->IP, 4) != W5500_OK){
+        return W5500_ERROR;
+    }
     uint8_t retry_time[2];
     retry_time[0] = (dev->RetryTime >> 8) & 0xFF;
     retry_time[1] = dev->RetryTime & 0xFF;
-    W5500_Write_Bytes(spi_id, W5500_BSB_COMMON, W5500_RTR0, retry_time, 2);
-    W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_RCR, &dev->RetryCount);
-    W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_PHYCFGR, &dev->PHYCFGR);
+    if(W5500_Write_Bytes(spi_id, W5500_BSB_COMMON, W5500_RTR0, retry_time, 2) != W5500_OK){
+        return W5500_ERROR;
+    }
+    if(W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_RCR, &dev->RetryCount) != W5500_OK){
+        return W5500_ERROR;
+    }
+    if(W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_PHYCFGR, &dev->PHYCFGR) != W5500_OK){
+        return W5500_ERROR;
+    }
     uint8_t version;
     if(W5500_Read_Byte(spi_id, W5500_BSB_COMMON, W5500_VERSIONR, &version) != W5500_OK) {
         printf("讀取 W5500 版本失敗\n");
@@ -63,11 +76,19 @@ W5500_StatusTypeDef W5500_Init(uint8_t spi_id, W5500_DevTypeDef *dev){
     }
 
     uint8_t zero = 0x00;
-    W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_IMR, &zero);
-    W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_SIMR, &zero);
+    if(W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_IMR, &zero) != W5500_OK){
+        return W5500_ERROR;
+    }
+    if(W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_SIMR, &zero) != W5500_OK){
+        return W5500_ERROR;
+    }
     uint8_t clear_ir = 0xF0;  // Bit 7~4：CONFLICT, UNREACH, PPPoE, MP
-    W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_IR, &clear_ir);
-    W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_SIR, &zero);
+    if(W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_IR, &clear_ir) != W5500_OK){
+        return W5500_ERROR;
+    }
+    if(W5500_Write_Byte(spi_id, W5500_BSB_COMMON, W5500_SIR, &zero) != W5500_OK){
+        return W5500_ERROR;
+    }
     return W5500_OK;
 }
 

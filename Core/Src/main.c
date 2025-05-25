@@ -100,6 +100,14 @@ int main(void)
   W5500_DevTypeDef w5500_dev;
   W5500_StatusTypeDef status = W5500_Init(SPI1_ID, &w5500_dev);
   SPI_Delay(10); // 等待 W5500 初始化穩定
+  //W5500 socket 初始化
+  W5500_SocketTypeDef socket_test;
+  if (W5500_Socket_Init(SPI1_ID, 0, &socket_test) == W5500_OK) {
+    printf("Socket 0 初始化成功\n");
+  } else {
+    printf("Socket 0 初始化失敗\n");
+  }
+  HAL_Delay(1000);  // 停 1 秒避免重複初始化
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -159,15 +167,57 @@ int main(void)
     printf("Version: %02X\n", w5500_dev_test.Version);
     SPI_Delay(10);
     uint8_t phycfgr;
-    W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_PHYCFGR, &phycfgr);
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_PHYCFGR, &phycfgr) != W5500_OK){
+      printf("phy error");
+    }
     printf("PHYCFGR: 0x%02X → LNK=%d SPD=%d DPX=%d\n", phycfgr, phycfgr&0x01, (phycfgr>>1)&0x01, (phycfgr>>2)&0x01);
     uint8_t IR, IMR, SIMR, SIR;
-    W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_IR, &IR);
-    W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_IMR, &IMR);
-    W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_SIMR, &SIMR);
-    W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_SIR, &SIR);
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_IR, &IR) != W5500_OK){
+      printf("IR error");
+    }
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_IMR, &IMR) != W5500_OK){
+      printf("IMR error");
+    }
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_SIMR, &SIMR) != W5500_OK){
+      printf("SIMR error");
+    }
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_COMMON, W5500_SIR, &SIR) != W5500_OK){
+      printf("SIR error");
+    }
     printf("IR: 0x%02X, IMR: 0x%02X, SIMR: 0x%02X, SIR: 0x%02X\n", IR, IMR, SIMR, SIR);
+    SPI_Delay(10);
+    /*socket test------------------------------------------------*/
+    printf("socket test--------------\n");
+    uint8_t sr;
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_SOCKET_REG(0), W5500_Sn_SR, &sr) != W5500_OK){
+      printf("socket0 SR error\n");
+    }
+    printf("Socket 0 狀態 Sn_SR: 0x%02X\n", sr);
+    printf("socket id:      %d\n", socket_test.socket_id);
+    printf("protocol:       0x%02X\n", socket_test.protocol);
+    printf("local port:     0x%04X\n", socket_test.local_port);
+    printf("socket state:   0x%02X\n", socket_test.state);
 
+    uint8_t read_command, read_protocol;
+    uint8_t read_port[2];
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_SOCKET_REG(0), W5500_Sn_SR, &read_command) != W5500_OK){
+      printf("socket0 CR error\n");
+    }
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_SOCKET_REG(0), W5500_Sn_MR, &read_protocol) != W5500_OK){
+      printf("socket0 MR error\n");
+    }
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_SOCKET_REG(0), W5500_Sn_PORT0, &read_port[0]) != W5500_OK){
+      printf("socket0 PORT0 error\n");
+    }
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_SOCKET_REG(0), W5500_Sn_PORT1, &read_port[1]) != W5500_OK){
+      printf("socket0 PORT1 error\n");
+    }
+    // 顯示結果
+    uint16_t port = ((uint16_t)read_port[0] << 8) | read_port[1];
+    printf("Sn_MR:  0x%02X\n", read_protocol);
+    printf("Sn_SR:  0x%02X\n", read_command);
+    printf("Sn_PORT: %d (0x%04X)\n", port, port);
+    SPI_Delay(20);
   }
   /* USER CODE END 3 */
 }
