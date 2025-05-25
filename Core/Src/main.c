@@ -102,12 +102,26 @@ int main(void)
   SPI_Delay(10); // 等待 W5500 初始化穩定
   //W5500 socket 初始化
   W5500_SocketTypeDef socket_test;
-  if (W5500_Socket_Init(SPI1_ID, 0, &socket_test) == W5500_OK) {
+  if (W5500_Socket_Init(SPI1_ID, W5500_Socket0, &socket_test) == W5500_OK) {
     printf("Socket 0 初始化成功\n");
   } else {
     printf("Socket 0 初始化失敗\n");
   }
   HAL_Delay(1000);  // 停 1 秒避免重複初始化
+  // 進入 LISTEN 狀態（TCP server）
+  uint8_t check_sr;
+  if (W5500_Socket_Listen(SPI1_ID, W5500_Socket0, &socket_test) != W5500_OK) {
+    printf("讀取SR中...\n");
+  } 
+  if(W5500_Read_Byte(SPI1_ID, W5500_BSB_SOCKET_REG(0), W5500_Sn_SR, &check_sr) != W5500_OK){
+    printf("socket0 SR error\n");
+  }
+  if(check_sr != SOCK_LISTEN){
+    printf("Socket 0 進入 LISTEN 失敗\n");
+  }
+  else{
+    printf("Socket 0 進入 LISTEN 成功\n");
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -236,16 +250,8 @@ int main(void)
     printf("Sn_TX_SIZE:  0x%02X\n", read_tx_size);
     printf("Sn_RX_SIZE:  0x%02X\n", read_rx_size);
     SPI_Delay(20);
-    // 進入 LISTEN 狀態（TCP server）
-    if (W5500_Socket_Listen(SPI1_ID, W5500_Socket0, &socket_test) != W5500_OK) {
-      printf("讀取SR中...\n");
-    } 
-    if(read_sr != SOCK_LISTEN){
-      printf("Socket 0 進入 LISTEN 失敗\n");
-    }
-    printf("Socket 0 進入 LISTEN 成功\n");
     if (W5500_Socket_Check_Established(SPI1_ID, W5500_Socket0, &socket_test) != W5500_OK) {
-      printf("讀取SR中...\n");
+      printf("SR 不是 SOCK_ESTABLISHED\n");
     } 
     SPI_Delay(20);
     // 檢查是否有來自 Client 的 TCP 連線資料
@@ -253,8 +259,19 @@ int main(void)
     W5500_StatusTypeDef recv_status = W5500_Socket_Receive(SPI1_ID, 0, &socket_test, recv_buf, sizeof(recv_buf));
     if (recv_status == W5500_OK) {
       printf("收到資料：%s\n", recv_buf);
+      // 準備回傳溫度
+      char temp_str[64];
+      snprintf(temp_str, sizeof(temp_str), "Temp: %.2f °C\r\n", temperature_C);
+
+      // 回傳給 Client
+      if (W5500_Socket_Send(SPI1_ID, W5500_Socket0, &socket_test, (uint8_t *)temp_str, strlen(temp_str)) == W5500_OK) {
+        printf("溫度已回傳給 Client: %s", temp_str);
+      } else {
+        printf("溫度回傳失敗\n");
+      }
     } else if (recv_status == W5500_DATA_NOT_READY) {
-    // 資料尚未準備好，可忽略
+      // 資料尚未準備好，可忽略
+      printf("資料尚未準備好");
     } else {
       printf("接收資料失敗\n");
     }
