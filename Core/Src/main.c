@@ -248,6 +248,17 @@ int main(void)
       printf("讀取SR中...\n");
     } 
     SPI_Delay(20);
+    // 檢查是否有來自 Client 的 TCP 連線資料
+    uint8_t recv_buf[128] = {0};
+    W5500_StatusTypeDef recv_status = W5500_Socket_Receive(SPI1_ID, 0, &socket_test, recv_buf, sizeof(recv_buf));
+    if (recv_status == W5500_OK) {
+      printf("收到資料：%s\n", recv_buf);
+    } else if (recv_status == W5500_DATA_NOT_READY) {
+    // 資料尚未準備好，可忽略
+    } else {
+      printf("接收資料失敗\n");
+    }
+    SPI_Delay(20);
   }
   /* USER CODE END 3 */
 }
