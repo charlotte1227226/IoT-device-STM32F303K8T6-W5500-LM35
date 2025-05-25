@@ -57,7 +57,10 @@ W5500_StatusTypeDef W5500_Socket_Open(uint8_t spi_id,uint8_t socket_num, W5500_S
         if (W5500_Read_Byte(spi_id, socket_bsb, W5500_Sn_CR, &check_cr) != W5500_OK)
             return W5500_ERROR;
     } while (check_cr != 0x00 && --timeout > 0);
-
+    if (timeout == 0) {
+        printf("Timeout waiting for Sn_CR to clear\n");
+        return W5500_TIMEOUT;
+    }
     if(W5500_Write_Byte(spi_id, socket_bsb, W5500_Sn_CR, &socket_command) != W5500_OK){
         return W5500_ERROR;
     }
@@ -81,7 +84,10 @@ W5500_StatusTypeDef W5500_Socket_Close(uint8_t spi_id,uint8_t socket_num, W5500_
         if (W5500_Read_Byte(spi_id, socket_bsb, W5500_Sn_CR, &check_cr) != W5500_OK)
             return W5500_ERROR;
     } while (check_cr != 0x00 && --timeout > 0);
-
+    if (timeout == 0) {
+        printf("Timeout waiting for Sn_CR to clear\n");
+        return W5500_TIMEOUT;
+    }
     if(W5500_Write_Byte(spi_id, socket_bsb, W5500_Sn_CR, &socket_command) != W5500_OK){
         return W5500_ERROR;
     }
@@ -95,3 +101,45 @@ W5500_StatusTypeDef W5500_Socket_Close(uint8_t spi_id,uint8_t socket_num, W5500_
     socket -> state = SOCK_CLOSED;
     return W5500_OK;
 }
+
+//TCP mode
+W5500_StatusTypeDef W5500_Socket_Listen(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket){
+    uint8_t socket_command = W5500_CR_LISTEN;
+    uint8_t socket_bsb = W5500_BSB_SOCKET_REG(socket_num);
+    uint8_t check_cr, check_sr;
+    uint32_t timeout = 1000;
+    if(W5500_Read_Byte(spi_id, socket_bsb, W5500_Sn_SR, &check_sr) != W5500_OK){
+        printf("1\n");
+        return W5500_ERROR;
+    }
+    if (check_sr != SOCK_INIT) {
+        printf("2\n");
+        return W5500_ERROR;
+    }
+    do {
+        if (W5500_Read_Byte(spi_id, socket_bsb, W5500_Sn_CR, &check_cr) != W5500_OK)
+            return W5500_ERROR;
+    } while (check_cr != 0x00 && --timeout > 0);
+    if (timeout == 0) {
+        printf("Timeout waiting for Sn_CR to clear\n");
+        return W5500_TIMEOUT;
+    }
+    if(W5500_Write_Byte(spi_id, socket_bsb, W5500_Sn_CR, &socket_command) != W5500_OK){
+        printf("3\n");
+        return W5500_ERROR;
+    }
+    uint8_t sr;
+    if(W5500_Read_Byte(spi_id, socket_bsb, W5500_Sn_SR, &sr) != W5500_OK){
+        printf("4\n");
+        return W5500_ERROR;
+    }
+    if (sr != SOCK_LISTEN) {
+        printf("5\n");
+        return W5500_ERROR;
+    }
+    socket -> state = SOCK_LISTEN;
+    printf("Sn_SR before LISTEN: 0x%02X\n", check_sr);
+    printf("Sn_SR after LISTEN: 0x%02X\n", sr);
+    return W5500_OK;
+}
+
