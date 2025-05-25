@@ -199,7 +199,9 @@ int main(void)
     printf("socket state:   0x%02X\n", socket_test.state);
 
     uint8_t read_command, read_protocol;
+    uint8_t read_cr;
     uint8_t read_port[2];
+    uint8_t read_ttl, read_tx_size, read_rx_size;
     if(W5500_Read_Byte(SPI1_ID, W5500_BSB_SOCKET_REG(0), W5500_Sn_SR, &read_command) != W5500_OK){
       printf("socket0 CR error\n");
     }
@@ -212,11 +214,27 @@ int main(void)
     if(W5500_Read_Byte(SPI1_ID, W5500_BSB_SOCKET_REG(0), W5500_Sn_PORT1, &read_port[1]) != W5500_OK){
       printf("socket0 PORT1 error\n");
     }
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_SOCKET_REG(0), W5500_Sn_CR, &read_cr) != W5500_OK){
+      printf("socket0 cr error\n");
+    }
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_SOCKET_REG(0), W5500_Sn_TTL, &read_ttl) != W5500_OK){
+      printf("socket0 cr error\n");
+    }
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_SOCKET_REG(0), W5500_Sn_TXBUF_SIZE, &read_tx_size) != W5500_OK){
+      printf("socket0 cr error\n");
+    }
+    if(W5500_Read_Byte(SPI1_ID, W5500_BSB_SOCKET_REG(0), W5500_Sn_RXBUF_SIZE, &read_rx_size) != W5500_OK){
+      printf("socket0 cr error\n");
+    }
     // 顯示結果
     uint16_t port = ((uint16_t)read_port[0] << 8) | read_port[1];
     printf("Sn_MR:  0x%02X\n", read_protocol);
     printf("Sn_SR:  0x%02X\n", read_command);
     printf("Sn_PORT: %d (0x%04X)\n", port, port);
+    printf("Sn_CR:  0x%02X\n", read_cr);
+    printf("Sn_TTL:  0x%02X\n", read_ttl);
+    printf("Sn_TX_SIZE:  0x%02X\n", read_tx_size);
+    printf("Sn_RX_SIZE:  0x%02X\n", read_rx_size);
     SPI_Delay(20);
   }
   /* USER CODE END 3 */

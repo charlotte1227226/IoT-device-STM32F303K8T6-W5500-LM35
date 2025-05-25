@@ -50,22 +50,32 @@ typedef enum {
 } W5500_SocketStatusTypeDef;
 /*------------*/
 
-typedef struct
-{
-    W5500_DevTypeDef *dev; // pointer to W5500 device structure
-    uint8_t socket_id; // socket number
-    W5500_ProtocolTypeDef protocol; // protocol type
-    uint16_t local_port; // local port, Sn_PORT
-    uint8_t remote_ip[4]; // remote IP address, Sn_DIPR[0~3]
-    uint16_t remote_port; // remote port, Sn_DPORT
-    uint8_t *tx_buffer; // transmit buffer
-    uint8_t *rx_buffer; // receive buffer
-    uint16_t tx_size; // transmit buffer size
-    uint16_t rx_size; // receive buffer size
-    uint16_t tx_write_ptr; // transmit write pointer, Sn_TX_WR
-    uint16_t tx_read_ptr; // transmit read pointer, 軟體內部記錄
-    W5500_SocketStatusTypeDef state; // socket state
+typedef struct {
+    W5500_DevTypeDef *dev;           // 指向對應的 W5500 裝置
+    uint8_t socket_id;               // Socket 編號 (0~7)
+    
+    // 通訊參數
+    W5500_ProtocolTypeDef protocol; // 協定類型：TCP / UDP / MACRAW
+    uint16_t local_port;            // 本地端 Port (Sn_PORT)
+    uint8_t remote_ip[4];           // 遠端 IP (Sn_DIPR)
+    uint16_t remote_port;           // 遠端 Port (Sn_DPORT)
+    uint8_t ttl;                    //TTL 設定（對應 Sn_TTL）
+
+    // 通訊狀態
+    W5500_SocketStatusTypeDef state; // 當前 socket 狀態 (如 CLOSED, INIT, ESTABLISHED)
+    uint8_t is_server;               // 是否為 server 模式 (1=是, 0=否)
+
+    // 緩衝區（可選）
+    uint8_t *tx_buffer;             // 傳送緩衝指標（使用者自行配置）
+    uint8_t *rx_buffer;             // 接收緩衝指標（使用者自行配置）
+    uint16_t tx_size;               // 傳送緩衝大小
+    uint16_t rx_size;               // 接收緩衝大小
+
+    // 傳送緩衝相關指標
+    uint16_t tx_write_ptr;          // 軟體內部維護的寫入位置
+    uint16_t tx_read_ptr;           // 軟體內部維護的讀取位置
 } W5500_SocketTypeDef;
+
 
 #define W5500_MAX_SOCKETS 8
 
@@ -79,12 +89,12 @@ typedef struct
 #define W5500_Socket7 7
 
 W5500_StatusTypeDef W5500_Socket_Init(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket);
-W5500_StatusTypeDef W5500_Socket_Open(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *sock);
-W5500_StatusTypeDef W5500_Socket_Listen(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *sock);
+W5500_StatusTypeDef W5500_Socket_Open(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket);
+W5500_StatusTypeDef W5500_Socket_Close(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket);
+W5500_StatusTypeDef W5500_Socket_Listen(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket);
 W5500_StatusTypeDef W5500_Socket_Connect(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket);
 W5500_StatusTypeDef W5500_Socket_Send(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket, uint8_t *data, uint16_t size);
 W5500_StatusTypeDef W5500_Socket_Receive(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket, uint8_t *data, uint16_t size);
-W5500_StatusTypeDef W5500_Socket_Close(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket);
 W5500_StatusTypeDef W5500_Socket_Get_Status(uint8_t spi_id,uint8_t socket_num, W5500_SocketTypeDef *socket, uint8_t *status);
 
 #endif
