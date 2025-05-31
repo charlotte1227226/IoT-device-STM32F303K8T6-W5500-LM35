@@ -271,7 +271,7 @@ int main(void)
       }
     } else if (recv_status == W5500_DATA_NOT_READY) {
       // 資料尚未準備好，可忽略
-      printf("資料尚未準備好");
+      printf("資料尚未準備好\n");
     } else {
       printf("接收資料失敗\n");
     }
