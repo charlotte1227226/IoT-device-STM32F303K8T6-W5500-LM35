@@ -4104,7 +4104,7 @@ LOAD C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x08000000                g_pfnVectors
                 0x08000188                        . = ALIGN (0x4)
 
-.text           0x08000190     0x985c
+.text           0x08000190     0x98a4
                 0x08000190                        . = ALIGN (0x4)
  *(.text)
  .text          0x08000190       0x40 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -4416,403 +4416,404 @@ LOAD C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x08004374      0x17e CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500_socket.c.obj
                 0x08004374                W5500_Socket_Receive
  *fill*         0x080044f2        0x6 
- .text.main     0x080044f8      0x7c4 CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
+ .text.main     0x080044f8      0x80c CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
                 0x080044f8                main
  .text.SystemClock_Config
-                0x08004cbc       0xb6 CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
-                0x08004cbc                SystemClock_Config
+                0x08004d04       0xb6 CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
+                0x08004d04                SystemClock_Config
  .text.Error_Handler
-                0x08004d72        0xc CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
-                0x08004d72                Error_Handler
- *fill*         0x08004d7e        0x2 
+                0x08004dba        0xc CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
+                0x08004dba                Error_Handler
+ *fill*         0x08004dc6        0x2 
  .text.MX_GPIO_Init
-                0x08004d80       0x60 CMakeFiles/IoTdeviceV1.dir/Core/Src/gpio.c.obj
-                0x08004d80                MX_GPIO_Init
+                0x08004dc8       0x60 CMakeFiles/IoTdeviceV1.dir/Core/Src/gpio.c.obj
+                0x08004dc8                MX_GPIO_Init
  .text.MX_ADC1_Init
-                0x08004de0       0xe0 CMakeFiles/IoTdeviceV1.dir/Core/Src/adc.c.obj
-                0x08004de0                MX_ADC1_Init
+                0x08004e28       0xe0 CMakeFiles/IoTdeviceV1.dir/Core/Src/adc.c.obj
+                0x08004e28                MX_ADC1_Init
  .text.HAL_ADC_MspInit
-                0x08004ec0       0x78 CMakeFiles/IoTdeviceV1.dir/Core/Src/adc.c.obj
-                0x08004ec0                HAL_ADC_MspInit
+                0x08004f08       0x78 CMakeFiles/IoTdeviceV1.dir/Core/Src/adc.c.obj
+                0x08004f08                HAL_ADC_MspInit
  .text.MX_SPI1_Init
-                0x08004f38       0x7c CMakeFiles/IoTdeviceV1.dir/Core/Src/spi.c.obj
-                0x08004f38                MX_SPI1_Init
+                0x08004f80       0x7c CMakeFiles/IoTdeviceV1.dir/Core/Src/spi.c.obj
+                0x08004f80                MX_SPI1_Init
  .text.HAL_SPI_MspInit
-                0x08004fb4       0x84 CMakeFiles/IoTdeviceV1.dir/Core/Src/spi.c.obj
-                0x08004fb4                HAL_SPI_MspInit
+                0x08004ffc       0x84 CMakeFiles/IoTdeviceV1.dir/Core/Src/spi.c.obj
+                0x08004ffc                HAL_SPI_MspInit
  .text.MX_USART1_UART_Init
-                0x08005038       0x60 CMakeFiles/IoTdeviceV1.dir/Core/Src/usart.c.obj
-                0x08005038                MX_USART1_UART_Init
+                0x08005080       0x60 CMakeFiles/IoTdeviceV1.dir/Core/Src/usart.c.obj
+                0x08005080                MX_USART1_UART_Init
  .text.HAL_UART_MspInit
-                0x08005098       0x88 CMakeFiles/IoTdeviceV1.dir/Core/Src/usart.c.obj
-                0x08005098                HAL_UART_MspInit
- .text._write   0x08005120       0x2c CMakeFiles/IoTdeviceV1.dir/Core/Src/usart.c.obj
-                0x08005120                _write
+                0x080050e0       0x88 CMakeFiles/IoTdeviceV1.dir/Core/Src/usart.c.obj
+                0x080050e0                HAL_UART_MspInit
+ .text._write   0x08005168       0x2c CMakeFiles/IoTdeviceV1.dir/Core/Src/usart.c.obj
+                0x08005168                _write
  .text.NMI_Handler
-                0x0800514c        0x8 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
-                0x0800514c                NMI_Handler
+                0x08005194        0x8 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
+                0x08005194                NMI_Handler
  .text.HardFault_Handler
-                0x08005154        0x8 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
-                0x08005154                HardFault_Handler
+                0x0800519c        0x8 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
+                0x0800519c                HardFault_Handler
  .text.MemManage_Handler
-                0x0800515c        0x8 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
-                0x0800515c                MemManage_Handler
+                0x080051a4        0x8 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
+                0x080051a4                MemManage_Handler
  .text.BusFault_Handler
-                0x08005164        0x8 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
-                0x08005164                BusFault_Handler
+                0x080051ac        0x8 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
+                0x080051ac                BusFault_Handler
  .text.UsageFault_Handler
-                0x0800516c        0x8 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
-                0x0800516c                UsageFault_Handler
+                0x080051b4        0x8 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
+                0x080051b4                UsageFault_Handler
  .text.SVC_Handler
-                0x08005174        0xe CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
-                0x08005174                SVC_Handler
+                0x080051bc        0xe CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
+                0x080051bc                SVC_Handler
  .text.DebugMon_Handler
-                0x08005182        0xe CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
-                0x08005182                DebugMon_Handler
+                0x080051ca        0xe CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
+                0x080051ca                DebugMon_Handler
  .text.PendSV_Handler
-                0x08005190        0xe CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
-                0x08005190                PendSV_Handler
+                0x080051d8        0xe CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
+                0x080051d8                PendSV_Handler
  .text.SysTick_Handler
-                0x0800519e        0xc CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
-                0x0800519e                SysTick_Handler
- *fill*         0x080051aa        0x2 
+                0x080051e6        0xc CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
+                0x080051e6                SysTick_Handler
+ *fill*         0x080051f2        0x2 
  .text.HAL_MspInit
-                0x080051ac       0x48 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_hal_msp.c.obj
-                0x080051ac                HAL_MspInit
+                0x080051f4       0x48 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_hal_msp.c.obj
+                0x080051f4                HAL_MspInit
  .text.HAL_ADC_Init
-                0x080051f4      0x324 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
-                0x080051f4                HAL_ADC_Init
+                0x0800523c      0x324 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
+                0x0800523c                HAL_ADC_Init
  .text.HAL_ADC_Start
-                0x08005518      0x16c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
-                0x08005518                HAL_ADC_Start
+                0x08005560      0x16c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
+                0x08005560                HAL_ADC_Start
  .text.HAL_ADC_PollForConversion
-                0x08005684      0x19c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
-                0x08005684                HAL_ADC_PollForConversion
+                0x080056cc      0x19c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
+                0x080056cc                HAL_ADC_PollForConversion
  .text.HAL_ADC_GetValue
-                0x08005820       0x1a CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
-                0x08005820                HAL_ADC_GetValue
- *fill*         0x0800583a        0x2 
+                0x08005868       0x1a CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
+                0x08005868                HAL_ADC_GetValue
+ *fill*         0x08005882        0x2 
  .text.HAL_ADC_ConfigChannel
-                0x0800583c      0x57c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
-                0x0800583c                HAL_ADC_ConfigChannel
+                0x08005884      0x57c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
+                0x08005884                HAL_ADC_ConfigChannel
  .text.HAL_ADCEx_MultiModeConfigChannel
-                0x08005db8      0x18c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
-                0x08005db8                HAL_ADCEx_MultiModeConfigChannel
+                0x08005e00      0x18c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
+                0x08005e00                HAL_ADCEx_MultiModeConfigChannel
  .text.ADC_Enable
-                0x08005f44       0xc8 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
+                0x08005f8c       0xc8 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
  .text.ADC_Disable
-                0x0800600c       0xcc CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
+                0x08006054       0xcc CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
  .text.HAL_Init
-                0x080060d8       0x2c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
-                0x080060d8                HAL_Init
+                0x08006120       0x2c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+                0x08006120                HAL_Init
  .text.HAL_InitTick
-                0x08006104       0x60 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
-                0x08006104                HAL_InitTick
+                0x0800614c       0x60 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+                0x0800614c                HAL_InitTick
  .text.HAL_IncTick
-                0x08006164       0x28 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
-                0x08006164                HAL_IncTick
+                0x080061ac       0x28 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+                0x080061ac                HAL_IncTick
  .text.HAL_GetTick
-                0x0800618c       0x18 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
-                0x0800618c                HAL_GetTick
+                0x080061d4       0x18 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+                0x080061d4                HAL_GetTick
  .text.HAL_Delay
-                0x080061a4       0x48 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
-                0x080061a4                HAL_Delay
+                0x080061ec       0x48 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+                0x080061ec                HAL_Delay
  .text.HAL_RCC_OscConfig
-                0x080061ec     0x101c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
-                0x080061ec                HAL_RCC_OscConfig
+                0x08006234     0x101c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x08006234                HAL_RCC_OscConfig
  .text.HAL_RCC_ClockConfig
-                0x08007208      0x2dc CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
-                0x08007208                HAL_RCC_ClockConfig
+                0x08007250      0x2dc CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x08007250                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x080074e4       0xa8 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
-                0x080074e4                HAL_RCC_GetSysClockFreq
+                0x0800752c       0xa8 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x0800752c                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_GetHCLKFreq
-                0x0800758c       0x18 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
-                0x0800758c                HAL_RCC_GetHCLKFreq
+                0x080075d4       0x18 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x080075d4                HAL_RCC_GetHCLKFreq
  .text.HAL_RCC_GetPCLK1Freq
-                0x080075a4       0x44 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
-                0x080075a4                HAL_RCC_GetPCLK1Freq
+                0x080075ec       0x44 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x080075ec                HAL_RCC_GetPCLK1Freq
  .text.HAL_RCC_GetPCLK2Freq
-                0x080075e8       0x44 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
-                0x080075e8                HAL_RCC_GetPCLK2Freq
+                0x08007630       0x44 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x08007630                HAL_RCC_GetPCLK2Freq
  .text.HAL_RCCEx_PeriphCLKConfig
-                0x0800762c      0x248 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
-                0x0800762c                HAL_RCCEx_PeriphCLKConfig
+                0x08007674      0x248 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
+                0x08007674                HAL_RCCEx_PeriphCLKConfig
  .text.HAL_GPIO_Init
-                0x08007874      0x2e4 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
-                0x08007874                HAL_GPIO_Init
+                0x080078bc      0x2e4 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
+                0x080078bc                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x08007b58       0x30 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
-                0x08007b58                HAL_GPIO_WritePin
+                0x08007ba0       0x30 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
+                0x08007ba0                HAL_GPIO_WritePin
  .text.__NVIC_SetPriorityGrouping
-                0x08007b88       0x48 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+                0x08007bd0       0x48 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
  .text.__NVIC_GetPriorityGrouping
-                0x08007bd0       0x1c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+                0x08007c18       0x1c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
  .text.__NVIC_SetPriority
-                0x08007bec       0x54 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+                0x08007c34       0x54 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
  .text.NVIC_EncodePriority
-                0x08007c40       0x66 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
- *fill*         0x08007ca6        0x2 
+                0x08007c88       0x66 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+ *fill*         0x08007cee        0x2 
  .text.SysTick_Config
-                0x08007ca8       0x44 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+                0x08007cf0       0x44 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08007cec       0x16 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
-                0x08007cec                HAL_NVIC_SetPriorityGrouping
+                0x08007d34       0x16 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+                0x08007d34                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x08007d02       0x38 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
-                0x08007d02                HAL_NVIC_SetPriority
+                0x08007d4a       0x38 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+                0x08007d4a                HAL_NVIC_SetPriority
  .text.HAL_SYSTICK_Config
-                0x08007d3a       0x18 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
-                0x08007d3a                HAL_SYSTICK_Config
+                0x08007d82       0x18 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+                0x08007d82                HAL_SYSTICK_Config
  .text.HAL_SPI_Init
-                0x08007d52      0x146 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
-                0x08007d52                HAL_SPI_Init
+                0x08007d9a      0x146 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
+                0x08007d9a                HAL_SPI_Init
  .text.HAL_SPI_Transmit
-                0x08007e98      0x2ea CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
-                0x08007e98                HAL_SPI_Transmit
+                0x08007ee0      0x2ea CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
+                0x08007ee0                HAL_SPI_Transmit
  .text.HAL_SPI_Receive
-                0x08008182      0x26e CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
-                0x08008182                HAL_SPI_Receive
+                0x080081ca      0x26e CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
+                0x080081ca                HAL_SPI_Receive
  .text.HAL_SPI_TransmitReceive
-                0x080083f0      0x444 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
-                0x080083f0                HAL_SPI_TransmitReceive
+                0x08008438      0x444 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
+                0x08008438                HAL_SPI_TransmitReceive
  .text.SPI_WaitFlagStateUntilTimeout
-                0x08008834      0x110 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
+                0x0800887c      0x110 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
  .text.SPI_WaitFifoStateUntilTimeout
-                0x08008944      0x12c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
+                0x0800898c      0x12c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
  .text.SPI_EndRxTransaction
-                0x08008a70       0xb0 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
+                0x08008ab8       0xb0 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
  .text.SPI_EndRxTxTransaction
-                0x08008b20       0x8c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
+                0x08008b68       0x8c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
  .text.HAL_UART_Init
-                0x08008bac       0x9c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
-                0x08008bac                HAL_UART_Init
+                0x08008bf4       0x9c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x08008bf4                HAL_UART_Init
  .text.HAL_UART_Transmit
-                0x08008c48      0x112 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
-                0x08008c48                HAL_UART_Transmit
- *fill*         0x08008d5a        0x2 
+                0x08008c90      0x112 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x08008c90                HAL_UART_Transmit
+ *fill*         0x08008da2        0x2 
  .text.UART_SetConfig
-                0x08008d5c      0x26c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
-                0x08008d5c                UART_SetConfig
+                0x08008da4      0x26c CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x08008da4                UART_SetConfig
  .text.UART_AdvFeatureConfig
-                0x08008fc8      0x144 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
-                0x08008fc8                UART_AdvFeatureConfig
+                0x08009010      0x144 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x08009010                UART_AdvFeatureConfig
  .text.UART_CheckIdleState
-                0x0800910c      0x150 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
-                0x0800910c                UART_CheckIdleState
+                0x08009154      0x150 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x08009154                UART_CheckIdleState
  .text.UART_WaitOnFlagUntilTimeout
-                0x0800925c       0xda CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
-                0x0800925c                UART_WaitOnFlagUntilTimeout
+                0x080092a4       0xda CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+                0x080092a4                UART_WaitOnFlagUntilTimeout
  .text.UART_EndRxTransfer
-                0x08009336       0xc8 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
- *fill*         0x080093fe        0x2 
+                0x0800937e       0xc8 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+ *fill*         0x08009446        0x2 
  .text.SystemInit
-                0x08009400       0x24 CMakeFiles/IoTdeviceV1.dir/Core/Src/system_stm32f3xx.c.obj
-                0x08009400                SystemInit
- .text._sbrk    0x08009424       0x6c CMakeFiles/IoTdeviceV1.dir/Core/Src/sysmem.c.obj
-                0x08009424                _sbrk
- .text._getpid  0x08009490       0x10 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
-                0x08009490                _getpid
- .text._kill    0x080094a0       0x20 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
-                0x080094a0                _kill
- .text._exit    0x080094c0       0x16 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
-                0x080094c0                _exit
- .text._read    0x080094d6       0x3a CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
-                0x080094d6                _read
- .text._close   0x08009510       0x18 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
-                0x08009510                _close
- .text._fstat   0x08009528       0x20 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
-                0x08009528                _fstat
- .text._isatty  0x08009548       0x16 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
-                0x08009548                _isatty
- .text._lseek   0x0800955e       0x1a CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
-                0x0800955e                _lseek
+                0x08009448       0x24 CMakeFiles/IoTdeviceV1.dir/Core/Src/system_stm32f3xx.c.obj
+                0x08009448                SystemInit
+ .text._sbrk    0x0800946c       0x6c CMakeFiles/IoTdeviceV1.dir/Core/Src/sysmem.c.obj
+                0x0800946c                _sbrk
+ .text._getpid  0x080094d8       0x10 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
+                0x080094d8                _getpid
+ .text._kill    0x080094e8       0x20 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
+                0x080094e8                _kill
+ .text._exit    0x08009508       0x16 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
+                0x08009508                _exit
+ .text._read    0x0800951e       0x3a CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
+                0x0800951e                _read
+ .text._close   0x08009558       0x18 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
+                0x08009558                _close
+ .text._fstat   0x08009570       0x20 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
+                0x08009570                _fstat
+ .text._isatty  0x08009590       0x16 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
+                0x08009590                _isatty
+ .text._lseek   0x080095a6       0x1a CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
+                0x080095a6                _lseek
  .text.Reset_Handler
-                0x08009578       0x50 CMakeFiles/IoTdeviceV1.dir/startup_stm32f303x8.s.obj
-                0x08009578                Reset_Handler
+                0x080095c0       0x50 CMakeFiles/IoTdeviceV1.dir/startup_stm32f303x8.s.obj
+                0x080095c0                Reset_Handler
  .text.Default_Handler
-                0x080095c8        0x2 CMakeFiles/IoTdeviceV1.dir/startup_stm32f303x8.s.obj
-                0x080095c8                RTC_Alarm_IRQHandler
-                0x080095c8                TIM1_CC_IRQHandler
-                0x080095c8                PVD_IRQHandler
-                0x080095c8                TAMP_STAMP_IRQHandler
-                0x080095c8                EXTI3_IRQHandler
-                0x080095c8                EXTI0_IRQHandler
-                0x080095c8                FPU_IRQHandler
-                0x080095c8                CAN_TX_IRQHandler
-                0x080095c8                TIM1_UP_TIM16_IRQHandler
-                0x080095c8                ADC1_2_IRQHandler
-                0x080095c8                SPI1_IRQHandler
-                0x080095c8                CAN_SCE_IRQHandler
-                0x080095c8                DMA1_Channel4_IRQHandler
-                0x080095c8                USART3_IRQHandler
-                0x080095c8                DMA1_Channel7_IRQHandler
-                0x080095c8                TIM7_DAC2_IRQHandler
-                0x080095c8                CAN_RX1_IRQHandler
-                0x080095c8                I2C1_EV_IRQHandler
-                0x080095c8                DMA1_Channel6_IRQHandler
-                0x080095c8                TIM3_IRQHandler
-                0x080095c8                RCC_IRQHandler
-                0x080095c8                DMA1_Channel1_IRQHandler
-                0x080095c8                Default_Handler
-                0x080095c8                EXTI15_10_IRQHandler
-                0x080095c8                COMP2_IRQHandler
-                0x080095c8                TIM6_DAC1_IRQHandler
-                0x080095c8                EXTI9_5_IRQHandler
-                0x080095c8                RTC_WKUP_IRQHandler
-                0x080095c8                DMA1_Channel5_IRQHandler
-                0x080095c8                EXTI4_IRQHandler
-                0x080095c8                TIM1_TRG_COM_TIM17_IRQHandler
-                0x080095c8                DMA1_Channel3_IRQHandler
-                0x080095c8                WWDG_IRQHandler
-                0x080095c8                TIM2_IRQHandler
-                0x080095c8                EXTI1_IRQHandler
-                0x080095c8                COMP4_6_IRQHandler
-                0x080095c8                USART2_IRQHandler
-                0x080095c8                DMA1_Channel2_IRQHandler
-                0x080095c8                FLASH_IRQHandler
-                0x080095c8                USART1_IRQHandler
-                0x080095c8                CAN_RX0_IRQHandler
-                0x080095c8                I2C1_ER_IRQHandler
-                0x080095c8                EXTI2_TSC_IRQHandler
-                0x080095c8                TIM1_BRK_TIM15_IRQHandler
- *fill*         0x080095ca        0x2 
- .text.printf   0x080095cc       0x24 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-printf.o)
-                0x080095cc                iprintf
-                0x080095cc                printf
- .text._puts_r  0x080095f0       0xaa C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
-                0x080095f0                _puts_r
- *fill*         0x0800969a        0x2 
- .text.puts     0x0800969c       0x10 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
-                0x0800969c                puts
+                0x08009610        0x2 CMakeFiles/IoTdeviceV1.dir/startup_stm32f303x8.s.obj
+                0x08009610                RTC_Alarm_IRQHandler
+                0x08009610                TIM1_CC_IRQHandler
+                0x08009610                PVD_IRQHandler
+                0x08009610                TAMP_STAMP_IRQHandler
+                0x08009610                EXTI3_IRQHandler
+                0x08009610                EXTI0_IRQHandler
+                0x08009610                FPU_IRQHandler
+                0x08009610                CAN_TX_IRQHandler
+                0x08009610                TIM1_UP_TIM16_IRQHandler
+                0x08009610                ADC1_2_IRQHandler
+                0x08009610                SPI1_IRQHandler
+                0x08009610                CAN_SCE_IRQHandler
+                0x08009610                DMA1_Channel4_IRQHandler
+                0x08009610                USART3_IRQHandler
+                0x08009610                DMA1_Channel7_IRQHandler
+                0x08009610                TIM7_DAC2_IRQHandler
+                0x08009610                CAN_RX1_IRQHandler
+                0x08009610                I2C1_EV_IRQHandler
+                0x08009610                DMA1_Channel6_IRQHandler
+                0x08009610                TIM3_IRQHandler
+                0x08009610                RCC_IRQHandler
+                0x08009610                DMA1_Channel1_IRQHandler
+                0x08009610                Default_Handler
+                0x08009610                EXTI15_10_IRQHandler
+                0x08009610                COMP2_IRQHandler
+                0x08009610                TIM6_DAC1_IRQHandler
+                0x08009610                EXTI9_5_IRQHandler
+                0x08009610                RTC_WKUP_IRQHandler
+                0x08009610                DMA1_Channel5_IRQHandler
+                0x08009610                EXTI4_IRQHandler
+                0x08009610                TIM1_TRG_COM_TIM17_IRQHandler
+                0x08009610                DMA1_Channel3_IRQHandler
+                0x08009610                WWDG_IRQHandler
+                0x08009610                TIM2_IRQHandler
+                0x08009610                EXTI1_IRQHandler
+                0x08009610                COMP4_6_IRQHandler
+                0x08009610                USART2_IRQHandler
+                0x08009610                DMA1_Channel2_IRQHandler
+                0x08009610                FLASH_IRQHandler
+                0x08009610                USART1_IRQHandler
+                0x08009610                CAN_RX0_IRQHandler
+                0x08009610                I2C1_ER_IRQHandler
+                0x08009610                EXTI2_TSC_IRQHandler
+                0x08009610                TIM1_BRK_TIM15_IRQHandler
+ *fill*         0x08009612        0x2 
+ .text.printf   0x08009614       0x24 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-printf.o)
+                0x08009614                iprintf
+                0x08009614                printf
+ .text._puts_r  0x08009638       0xaa C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
+                0x08009638                _puts_r
+ *fill*         0x080096e2        0x2 
+ .text.puts     0x080096e4       0x10 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
+                0x080096e4                puts
  .text.snprintf
-                0x080096ac       0x6c C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-snprintf.o)
-                0x080096ac                sniprintf
-                0x080096ac                snprintf
- .text.__errno  0x08009718        0xc C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
-                0x08009718                __errno
+                0x080096f4       0x6c C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-snprintf.o)
+                0x080096f4                sniprintf
+                0x080096f4                snprintf
+ .text.__errno  0x08009760        0xc C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
+                0x08009760                __errno
  .text.__ssputs_r
-                0x08009724       0xb6 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
-                0x08009724                __ssputs_r
- *fill*         0x080097da        0x2 
+                0x0800976c       0xb6 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
+                0x0800976c                __ssputs_r
+ *fill*         0x08009822        0x2 
  .text._svfprintf_r
-                0x080097dc      0x1f8 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
-                0x080097dc                _svfiprintf_r
-                0x080097dc                _svfprintf_r
+                0x08009824      0x1f8 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
+                0x08009824                _svfiprintf_r
+                0x08009824                _svfprintf_r
  *(.glue_7)
- .glue_7        0x080099d4        0x0 linker stubs
+ .glue_7        0x08009a1c        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x080099d4        0x0 linker stubs
+ .glue_7t       0x08009a1c        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x080099d4        0x0 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x08009a1c        0x0 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x080099d4        0x4 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080099d4                _init
- .init          0x080099d8        0x8 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x08009a1c        0x4 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08009a1c                _init
+ .init          0x08009a20        0x8 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x080099e0        0x4 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080099e0                _fini
- .fini          0x080099e4        0x8 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x080099ec                        . = ALIGN (0x4)
-                0x080099ec                        _etext = .
+ .fini          0x08009a28        0x4 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08009a28                _fini
+ .fini          0x08009a2c        0x8 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x08009a34                        . = ALIGN (0x4)
+                0x08009a34                        _etext = .
 
-.vfp11_veneer   0x080099ec        0x0
- .vfp11_veneer  0x080099ec        0x0 linker stubs
+.vfp11_veneer   0x08009a34        0x0
+ .vfp11_veneer  0x08009a34        0x0 linker stubs
 
-.v4_bx          0x080099ec        0x0
- .v4_bx         0x080099ec        0x0 linker stubs
+.v4_bx          0x08009a34        0x0
+ .v4_bx         0x08009a34        0x0 linker stubs
 
-.iplt           0x080099ec        0x0
- .iplt          0x080099ec        0x0 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x08009a34        0x0
+ .iplt          0x08009a34        0x0 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x080099f0      0xbe4
-                0x080099f0                        . = ALIGN (0x4)
+.rodata         0x08009a38      0xc4c
+                0x08009a38                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x080099f0      0x13b CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500.c.obj
- *fill*         0x08009b2b        0x1 
- .rodata        0x08009b2c      0x245 CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500_socket.c.obj
- *fill*         0x08009d71        0x3 
- .rodata        0x08009d74      0x4b7 CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
+ .rodata        0x08009a38      0x13b CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500.c.obj
+ *fill*         0x08009b73        0x1 
+ .rodata        0x08009b74      0x245 CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500_socket.c.obj
+ *fill*         0x08009db9        0x3 
+ .rodata        0x08009dbc      0x51d CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
  *(.rodata*)
  .rodata._printf_float.str1.1
-                0x0800a22b      0x171 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_float.o)
+                0x0800a2d9      0x171 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_float.o)
                                  0x12 (size before relaxing)
  .rodata._printf_i.str1.1
-                0x0800a39c       0x22 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x0800a44a       0x22 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
  .rodata._dtoa_r.str1.1
-                0x0800a39c       0x8f C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-dtoa.o)
+                0x0800a44a       0x8f C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-dtoa.o)
  .rodata._Balloc.str1.1
-                0x0800a39c       0x70 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mprec.o)
+                0x0800a44a       0x70 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mprec.o)
  .rodata.__multadd.str1.1
-                0x0800a39c       0x11 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mprec.o)
- .rodata.p05.0  0x0800a39c        0xc C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mprec.o)
+                0x0800a44a       0x11 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mprec.o)
+ *fill*         0x0800a44a        0x2 
+ .rodata.p05.0  0x0800a44c        0xc C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mprec.o)
  .rodata.__mprec_bigtens
-                0x0800a3a8       0x28 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mprec.o)
-                0x0800a3a8                __mprec_bigtens
+                0x0800a458       0x28 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mprec.o)
+                0x0800a458                __mprec_bigtens
  .rodata.__mprec_tens
-                0x0800a3d0       0xc8 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mprec.o)
-                0x0800a3d0                __mprec_tens
+                0x0800a480       0xc8 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mprec.o)
+                0x0800a480                __mprec_tens
  .rodata._setlocale_r.str1.1
-                0x0800a498        0x9 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-locale.o)
+                0x0800a548        0x9 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-locale.o)
  .rodata.str1.1
-                0x0800a498        0x2 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-locale.o)
+                0x0800a548        0x2 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-locale.o)
  .rodata.__assert_func.str1.1
-                0x0800a498       0x3d C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-assert.o)
+                0x0800a548       0x3d C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-assert.o)
  .rodata._ctype_
-                0x0800a498      0x101 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-ctype_.o)
-                0x0800a498                _ctype_
+                0x0800a548      0x101 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-ctype_.o)
+                0x0800a548                _ctype_
  .rodata._vfprintf_r.str1.1
-                0x0800a599       0x11 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf.o)
- *fill*         0x0800a599        0x3 
+                0x0800a649       0x11 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf.o)
+ *fill*         0x0800a649        0x3 
  .rodata.aPLLMULFactorTable
-                0x0800a59c       0x10 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x0800a64c       0x10 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
  .rodata.aPredivFactorTable
-                0x0800a5ac       0x10 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+                0x0800a65c       0x10 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
  .rodata.AHBPrescTable
-                0x0800a5bc       0x10 CMakeFiles/IoTdeviceV1.dir/Core/Src/system_stm32f3xx.c.obj
-                0x0800a5bc                AHBPrescTable
+                0x0800a66c       0x10 CMakeFiles/IoTdeviceV1.dir/Core/Src/system_stm32f3xx.c.obj
+                0x0800a66c                AHBPrescTable
  .rodata.APBPrescTable
-                0x0800a5cc        0x8 CMakeFiles/IoTdeviceV1.dir/Core/Src/system_stm32f3xx.c.obj
-                0x0800a5cc                APBPrescTable
+                0x0800a67c        0x8 CMakeFiles/IoTdeviceV1.dir/Core/Src/system_stm32f3xx.c.obj
+                0x0800a67c                APBPrescTable
  .rodata._svfprintf_r.str1.1
-                0x0800a5d4       0x11 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
-                0x0800a5e8                        . = ALIGN (0x4)
+                0x0800a684       0x11 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
+                0x0800a698                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x0800a5d4        0x8
-                0x0800a5d4                        __exidx_start = .
+.ARM            0x0800a684        0x8
+                0x0800a684                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0800a5d4        0x8 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memchr.o)
- .ARM.exidx     0x0800a5dc        0x0 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
+ .ARM.exidx     0x0800a684        0x8 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memchr.o)
+ .ARM.exidx     0x0800a68c        0x0 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
                                   0x8 (size before relaxing)
-                0x0800a5dc                        __exidx_end = .
+                0x0800a68c                        __exidx_end = .
 
-.rel.dyn        0x0800a5dc        0x0
- .rel.iplt      0x0800a5dc        0x0 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x0800a68c        0x0
+ .rel.iplt      0x0800a68c        0x0 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.preinit_array  0x0800a5dc        0x0
-                0x0800a5dc                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0800a68c        0x0
+                0x0800a68c                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0800a5dc                        PROVIDE (__preinit_array_end = .)
+                0x0800a68c                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x0800a5dc        0x4
-                0x0800a5dc                        PROVIDE (__init_array_start = .)
+.init_array     0x0800a68c        0x4
+                0x0800a68c                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0800a5dc        0x4 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x0800a5e0                        PROVIDE (__init_array_end = .)
+ .init_array    0x0800a68c        0x4 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0800a690                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x0800a5e0        0x4
+.fini_array     0x0800a690        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0800a5e0        0x4 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x0800a690        0x4 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0800a5e4                        _sidata = LOADADDR (.data)
+                0x0800a694                        _sidata = LOADADDR (.data)
 
-.data           0x20000000      0x1d4 load address 0x0800a5e4
+.data           0x20000000      0x1d4 load address 0x0800a694
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -4840,12 +4841,12 @@ LOAD C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x200001d0                SystemCoreClock
                 0x200001d4                        . = ALIGN (0x4)
                 0x200001d4                        _edata = .
-                0x0800a7b8                        _siccmram = LOADADDR (.ccmram)
+                0x0800a868                        _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x200001d4        0x0 load address 0x0800a7b8
+.igot.plt       0x200001d4        0x0 load address 0x0800a868
  .igot.plt      0x200001d4        0x0 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ccmram         0x10000000        0x0 load address 0x0800a7b8
+.ccmram         0x10000000        0x0 load address 0x0800a868
                 0x10000000                        . = ALIGN (0x4)
                 0x10000000                        _sccmram = .
  *(.ccmram)
@@ -5185,34 +5186,34 @@ LOAD C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_frame   0x00003ffc       0x20 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
  .debug_frame   0x0000401c       0x90 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
 
-.debug_info     0x00000000    0x12564
+.debug_info     0x00000000    0x12584
  .debug_info    0x00000000      0x6d1 CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500.c.obj
  .debug_info    0x000006d1      0x880 CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500_spi.c.obj
  .debug_info    0x00000f51      0xb89 CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500_socket.c.obj
- .debug_info    0x00001ada     0x12e2 CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
- .debug_info    0x00002dbc      0x2e9 CMakeFiles/IoTdeviceV1.dir/Core/Src/gpio.c.obj
- .debug_info    0x000030a5      0xa75 CMakeFiles/IoTdeviceV1.dir/Core/Src/adc.c.obj
- .debug_info    0x00003b1a      0x839 CMakeFiles/IoTdeviceV1.dir/Core/Src/spi.c.obj
- .debug_info    0x00004353      0x990 CMakeFiles/IoTdeviceV1.dir/Core/Src/usart.c.obj
- .debug_info    0x00004ce3      0x113 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
- .debug_info    0x00004df6      0x18d CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_hal_msp.c.obj
- .debug_info    0x00004f83     0x15b2 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
- .debug_info    0x00006535      0x74a CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
- .debug_info    0x00006c7f     0x148a CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
- .debug_info    0x00008109      0x52e CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
- .debug_info    0x00008637      0x6a6 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
- .debug_info    0x00008cdd      0xa87 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
- .debug_info    0x00009764     0x160a CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
- .debug_info    0x0000ad6e     0x39a8 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
- .debug_info    0x0000e716      0x407 CMakeFiles/IoTdeviceV1.dir/Core/Src/system_stm32f3xx.c.obj
- .debug_info    0x0000eb1d      0x168 CMakeFiles/IoTdeviceV1.dir/Core/Src/sysmem.c.obj
- .debug_info    0x0000ec85      0x6a3 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
- .debug_info    0x0000f328       0x30 CMakeFiles/IoTdeviceV1.dir/startup_stm32f303x8.s.obj
- .debug_info    0x0000f358      0x841 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-printf.o)
- .debug_info    0x0000fb99      0x950 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
- .debug_info    0x000104e9      0x8b9 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-snprintf.o)
- .debug_info    0x00010da2      0x6fb C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
- .debug_info    0x0001149d     0x10c7 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
+ .debug_info    0x00001ada     0x1302 CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
+ .debug_info    0x00002ddc      0x2e9 CMakeFiles/IoTdeviceV1.dir/Core/Src/gpio.c.obj
+ .debug_info    0x000030c5      0xa75 CMakeFiles/IoTdeviceV1.dir/Core/Src/adc.c.obj
+ .debug_info    0x00003b3a      0x839 CMakeFiles/IoTdeviceV1.dir/Core/Src/spi.c.obj
+ .debug_info    0x00004373      0x990 CMakeFiles/IoTdeviceV1.dir/Core/Src/usart.c.obj
+ .debug_info    0x00004d03      0x113 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
+ .debug_info    0x00004e16      0x18d CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_hal_msp.c.obj
+ .debug_info    0x00004fa3     0x15b2 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
+ .debug_info    0x00006555      0x74a CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+ .debug_info    0x00006c9f     0x148a CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+ .debug_info    0x00008129      0x52e CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
+ .debug_info    0x00008657      0x6a6 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
+ .debug_info    0x00008cfd      0xa87 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+ .debug_info    0x00009784     0x160a CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
+ .debug_info    0x0000ad8e     0x39a8 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+ .debug_info    0x0000e736      0x407 CMakeFiles/IoTdeviceV1.dir/Core/Src/system_stm32f3xx.c.obj
+ .debug_info    0x0000eb3d      0x168 CMakeFiles/IoTdeviceV1.dir/Core/Src/sysmem.c.obj
+ .debug_info    0x0000eca5      0x6a3 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
+ .debug_info    0x0000f348       0x30 CMakeFiles/IoTdeviceV1.dir/startup_stm32f303x8.s.obj
+ .debug_info    0x0000f378      0x841 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-printf.o)
+ .debug_info    0x0000fbb9      0x950 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
+ .debug_info    0x00010509      0x8b9 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-snprintf.o)
+ .debug_info    0x00010dc2      0x6fb C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
+ .debug_info    0x000114bd     0x10c7 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
 
 .debug_abbrev   0x00000000     0x3388
  .debug_abbrev  0x00000000      0x1b2 CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500.c.obj
@@ -5467,41 +5468,41 @@ LOAD C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_macro   0x0001d3d2       0x16 CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
  .debug_macro   0x0001d3e8       0xce CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
 
-.debug_line     0x00000000    0x12dd3
+.debug_line     0x00000000    0x12de0
  .debug_line    0x00000000      0xaa5 CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500.c.obj
  .debug_line    0x00000aa5      0x87a CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500_spi.c.obj
  .debug_line    0x0000131f      0xcce CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500_socket.c.obj
- .debug_line    0x00001fed      0xaf8 CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
- .debug_line    0x00002ae5      0x780 CMakeFiles/IoTdeviceV1.dir/Core/Src/gpio.c.obj
- .debug_line    0x00003265      0x81b CMakeFiles/IoTdeviceV1.dir/Core/Src/adc.c.obj
- .debug_line    0x00003a80      0x7f0 CMakeFiles/IoTdeviceV1.dir/Core/Src/spi.c.obj
- .debug_line    0x00004270      0x802 CMakeFiles/IoTdeviceV1.dir/Core/Src/usart.c.obj
- .debug_line    0x00004a72      0x822 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
- .debug_line    0x00005294      0x773 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_hal_msp.c.obj
- .debug_line    0x00005a07     0x1fd2 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
- .debug_line    0x000079d9      0xa29 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
- .debug_line    0x00008402     0x1588 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
- .debug_line    0x0000998a      0xae9 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
- .debug_line    0x0000a473      0xb60 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
- .debug_line    0x0000afd3      0xbed CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
- .debug_line    0x0000bbc0     0x20b9 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
- .debug_line    0x0000dc79     0x2c13 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
- .debug_line    0x0001088c      0x7ed CMakeFiles/IoTdeviceV1.dir/Core/Src/system_stm32f3xx.c.obj
- .debug_line    0x00011079      0x35a CMakeFiles/IoTdeviceV1.dir/Core/Src/sysmem.c.obj
- .debug_line    0x000113d3      0x67e CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
- .debug_line    0x00011a51       0x7a CMakeFiles/IoTdeviceV1.dir/startup_stm32f303x8.s.obj
- .debug_line    0x00011acb      0x259 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-printf.o)
- .debug_line    0x00011d24      0x354 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
- .debug_line    0x00012078      0x365 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-snprintf.o)
- .debug_line    0x000123dd      0x185 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
- .debug_line    0x00012562      0x871 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
+ .debug_line    0x00001fed      0xb05 CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
+ .debug_line    0x00002af2      0x780 CMakeFiles/IoTdeviceV1.dir/Core/Src/gpio.c.obj
+ .debug_line    0x00003272      0x81b CMakeFiles/IoTdeviceV1.dir/Core/Src/adc.c.obj
+ .debug_line    0x00003a8d      0x7f0 CMakeFiles/IoTdeviceV1.dir/Core/Src/spi.c.obj
+ .debug_line    0x0000427d      0x802 CMakeFiles/IoTdeviceV1.dir/Core/Src/usart.c.obj
+ .debug_line    0x00004a7f      0x822 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_it.c.obj
+ .debug_line    0x000052a1      0x773 CMakeFiles/IoTdeviceV1.dir/Core/Src/stm32f3xx_hal_msp.c.obj
+ .debug_line    0x00005a14     0x1fd2 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c.obj
+ .debug_line    0x000079e6      0xa29 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+ .debug_line    0x0000840f     0x1588 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+ .debug_line    0x00009997      0xae9 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
+ .debug_line    0x0000a480      0xb60 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
+ .debug_line    0x0000afe0      0xbed CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+ .debug_line    0x0000bbcd     0x20b9 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
+ .debug_line    0x0000dc86     0x2c13 CMakeFiles/IoTdeviceV1.dir/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c.obj
+ .debug_line    0x00010899      0x7ed CMakeFiles/IoTdeviceV1.dir/Core/Src/system_stm32f3xx.c.obj
+ .debug_line    0x00011086      0x35a CMakeFiles/IoTdeviceV1.dir/Core/Src/sysmem.c.obj
+ .debug_line    0x000113e0      0x67e CMakeFiles/IoTdeviceV1.dir/Core/Src/syscalls.c.obj
+ .debug_line    0x00011a5e       0x7a CMakeFiles/IoTdeviceV1.dir/startup_stm32f303x8.s.obj
+ .debug_line    0x00011ad8      0x259 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-printf.o)
+ .debug_line    0x00011d31      0x354 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-puts.o)
+ .debug_line    0x00012085      0x365 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-snprintf.o)
+ .debug_line    0x000123ea      0x185 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
+ .debug_line    0x0001256f      0x871 C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
 
 .debug_str      0x00000000    0xa76eb
  .debug_str     0x00000000    0xa76eb CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500.c.obj
                               0x9e2c5 (size before relaxing)
  .debug_str     0x000a76eb    0x9ddcc CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500_spi.c.obj
  .debug_str     0x000a76eb    0x9e647 CMakeFiles/IoTdeviceV1.dir/Core/Src/w5500_socket.c.obj
- .debug_str     0x000a76eb    0x9ee86 CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
+ .debug_str     0x000a76eb    0x9ee99 CMakeFiles/IoTdeviceV1.dir/Core/Src/main.c.obj
  .debug_str     0x000a76eb    0x9d930 CMakeFiles/IoTdeviceV1.dir/Core/Src/gpio.c.obj
  .debug_str     0x000a76eb    0x9de85 CMakeFiles/IoTdeviceV1.dir/Core/Src/adc.c.obj
  .debug_str     0x000a76eb    0x9dd54 CMakeFiles/IoTdeviceV1.dir/Core/Src/spi.c.obj

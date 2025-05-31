@@ -256,7 +256,7 @@ int main(void)
     SPI_Delay(20);
     // 檢查是否有來自 Client 的 TCP 連線資料
     uint8_t recv_buf[128] = {0};
-    W5500_StatusTypeDef recv_status = W5500_Socket_Receive(SPI1_ID, 0, &socket_test, recv_buf, sizeof(recv_buf));
+    W5500_StatusTypeDef recv_status = W5500_Socket_Receive(SPI1_ID, W5500_Socket0, &socket_test, recv_buf, sizeof(recv_buf));
     if (recv_status == W5500_OK) {
       printf("收到資料：%s\n", recv_buf);
       // 準備回傳溫度
@@ -275,6 +275,16 @@ int main(void)
     } else {
       printf("接收資料失敗\n");
     }
+    if (sr == SOCK_CLOSE_WAIT) {
+    // Sn_SR = 0x1C，表示對方已關閉，進入 CLOSE-WAIT。
+      printf(">>> 發現 Sn_SR = 0x1C (CLOSE_WAIT)，執行 Close\r\n");
+      W5500_Socket_Close(SPI1_ID, W5500_Socket0, &socket_test);
+      // 接著再初始化、監聽
+      W5500_Socket_Init(SPI1_ID, W5500_Socket0, &socket_test);
+      W5500_Socket_Listen(SPI1_ID, W5500_Socket0, &socket_test);
+      printf(">>> 已重新 LISTEN (Sn_SR 應回到 0x14)\r\n");
+    }
+
     SPI_Delay(20);
   }
   /* USER CODE END 3 */
